@@ -1,0 +1,1363 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bookrt160.github.io/liftforge-docs/presets/">
+      
+      
+        <link rel="prev" href="../builder/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Presets and visual sets - LiftForge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#presets-and-visual-sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LiftForge Documentation" class="md-header__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiftForge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Presets and visual sets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LiftForge Documentation" class="md-nav__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LiftForge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevator Builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets and visual sets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets and visual sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sizes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-a-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use a preset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-finishes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials and finishes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meshes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textures-and-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Textures and audio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lighting-of-the-example-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lighting of the example maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limits-of-the-example-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limits of the example maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-own-visual-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make your own visual set
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the API fits together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons-and-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help, Phone and Emergency Call buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dispatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank and destination dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-and-faults/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating modes and faults
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inspection views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../own-character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using your own character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VR setup (OpenXR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../npc-riding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC riding guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-partition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World Partition notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits, licences and AI disclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sizes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-a-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use a preset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-finishes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials and finishes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meshes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textures-and-audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Textures and audio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lighting-of-the-example-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lighting of the example maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limits-of-the-example-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limits of the example maps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-your-own-visual-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Make your own visual set
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="presets-and-visual-sets">Presets and visual sets<a class="headerlink" href="#presets-and-visual-sets" title="Permanent link">&para;</a></h1>
+<p>A <strong>preset</strong> (<code>DA_Preset_&lt;Key&gt;</code>) stores one elevator configuration so many cars can share it. A <strong>visual set</strong> (<code>DA_VisualSet_&lt;Key&gt;</code>) maps each part role (cabin wall, door frame, handrail and so on) to an authored mesh and its materials. A <strong>Blueprint</strong> (<code>BP_LF_&lt;Key&gt;</code>) is an elevator actor with the preset already assigned.</p>
+<p>All three exist for these nine keys: <code>Traction</code>, <code>MRL630</code>, <code>MRL1000</code>, <code>Goods2000</code>, <code>Bed2500</code>, <code>Panoramic</code>, <code>Hydraulic</code>, <code>Platform</code>, <code>Cycle</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Presets</td>
+<td><code>/LiftForge/Presets/DA_Preset_&lt;Key&gt;</code></td>
+</tr>
+<tr>
+<td>Visual sets</td>
+<td><code>/LiftForge/VisualSets/DA_VisualSet_&lt;Key&gt;</code></td>
+</tr>
+<tr>
+<td>Blueprints</td>
+<td><code>/LiftForge/Blueprints/BP_LF_&lt;Key&gt;</code></td>
+</tr>
+<tr>
+<td>Example maps</td>
+<td><code>/LiftForge/Examples/Maps/LF_Showcase_Warm</code> and <code>/LiftForge/Examples/Maps/LF_Showcase_Noir</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sizes">Sizes<a class="headerlink" href="#sizes" title="Permanent link">&para;</a></h2>
+<p>Passenger, goods, bed, panoramic and hydraulic cars stay within the <strong>EN 81-20</strong> maximum car area for their rated load. Sizes are visualisation sizes, inspired by common <strong>ISO 4190-1</strong> classes, and catalogue-neutral. The platform and cycle lift sizes are illustrative. Check the standard and your jurisdiction for real projects. Lengths are in centimetres. The sizes do not represent any manufacturer's product.</p>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Rated load</th>
+<th>Car W x D x H</th>
+<th>Door W x H</th>
+<th>Drive, doors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traction</td>
+<td>800 kg, 10 persons</td>
+<td>135 x 140 x 230</td>
+<td>90 x 210</td>
+<td>gearless traction, centre opening</td>
+</tr>
+<tr>
+<td>MRL630</td>
+<td>630 kg, 8 persons</td>
+<td>110 x 140 x 220</td>
+<td>80 x 200</td>
+<td>machine-room-less traction, side sliding</td>
+</tr>
+<tr>
+<td>MRL1000</td>
+<td>1000 kg, 13 persons</td>
+<td>160 x 140 x 230</td>
+<td>90 x 210</td>
+<td>machine-room-less traction, centre opening</td>
+</tr>
+<tr>
+<td>Goods2000</td>
+<td>2000 kg</td>
+<td>180 x 230 x 240</td>
+<td>140 x 210</td>
+<td>geared traction, telescopic</td>
+</tr>
+<tr>
+<td>Bed2500</td>
+<td>2500 kg</td>
+<td>200 x 240 x 240</td>
+<td>130 x 210</td>
+<td>gearless traction, telescopic</td>
+</tr>
+<tr>
+<td>Panoramic</td>
+<td>1000 kg, 13 persons</td>
+<td>150 x 150 x 250</td>
+<td>90 x 210</td>
+<td>gearless traction, centre opening, glazed walls</td>
+</tr>
+<tr>
+<td>Hydraulic</td>
+<td>1000 kg</td>
+<td>110 x 210 x 230</td>
+<td>90 x 210</td>
+<td>hydraulic, side sliding</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>400 kg</td>
+<td>110 x 140 x 210</td>
+<td>90 x 190</td>
+<td>hydraulic, hinged gate</td>
+</tr>
+<tr>
+<td>Cycle</td>
+<td>500 kg</td>
+<td>100 x 220 x 210</td>
+<td>80 x 190</td>
+<td>hydraulic, hinged gate</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>All presets use a 1.5 s door cycle.</li>
+<li>The Platform speed is illustrative.</li>
+<li>The MRL presets show a machine-room-less drive: the gearless machine sits on the rail tops and the controller is a cabinet beside the top landing door.</li>
+</ul>
+<p>Every preset's cabin is authored at its exact size (walls, floor, ceiling, light, jambs, header, doors, handrails, sill, frame, toe guard and car operating panel cassette), each with its own design language: Traction walnut and bronze with a rear mirror; MRL630 oak and satin stainless; MRL1000 graphite laminate, brass trim and an LED cove; Goods2000 steel liner panels, bumper rails and a chequer floor; Bed2500 white HPL, vinyl floor, wide mirror and a fold-down seat; Panoramic faceted glass walls in a steel frame with a spotlight ring and a glazed hoistway; Hydraulic painted steel; Platform half-height powder-coated walls with a control column and a folding access ramp (lowered while the gate is open); Cycle rubber-lined walls with a wheel channel in the floor. The car operating panel sits on the right side wall next to the front on all nine presets (their return panels are narrower than 40 cm); a car with a return panel of 40 cm or more keeps it beside the door.</p>
+<p>The demo building used by the example maps has the floors B2 (0 cm), B1 (320), G (680), M (950), L1 (1250), L2 (1620), L3 (1980) and L4 (2360). Each preset serves a subset of them.</p>
+<h2 id="use-a-preset">Use a preset<a class="headerlink" href="#use-a-preset" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Drag a <code>BP_LF_&lt;Key&gt;</code> into the level; or</li>
+<li>add an <code>LFElevator</code> actor and set <strong>Preset</strong> to a <code>DA_Preset_&lt;Key&gt;</code>; or</li>
+<li>pick it in the <a href="../builder/">Elevator Builder</a>.</li>
+</ul>
+<p>To make a variant, either create your own preset asset (a <code>LFElevatorPreset</code> data asset) or turn on <strong>Use Configuration Override</strong> on one car.</p>
+<p>Configuration fields: <strong>Shaft Material</strong> (a glass instance makes a glazed hoistway, as the panoramic preset uses), <strong>Cabin Screen</strong> (none, ceiling corner, side wall) with <strong>Cabin Screen Image</strong>, and <strong>Landing Wall Offset</strong> (how far the finished landing wall stands in front of the door plane; the hall station, lanterns and indicators are mounted on that face; 0 keeps the 1.0 layout). <strong>Mirror Capture</strong> gives the rear mirror panel a real reflection (a scene capture from the viewer's reflected position, one capture per frame while someone in front of it can see it: the doors are open, the viewer is inside the car, or the cabin is glazed); it needs the project setting <em>Support global clip plane for Planar Reflections</em> and is on in the Traction, MRL1000 and Bed2500 presets. Its edge smoothing relies on the main view's TSR or TAA (a sub-texel jitter on the capture that the temporal filter resolves); with FXAA, MSAA or no anti-aliasing the reflection is sharper but its edges are less smoothed. The mirror capture is untested in VR (see <a href="../vr/">VR setup</a>).</p>
+<h2 id="materials-and-finishes">Materials and finishes<a class="headerlink" href="#materials-and-finishes" title="Permanent link">&para;</a></h2>
+<p>Master materials are in <code>/LiftForge/Materials/Masters</code>: <code>M_LF_Metal</code>, <code>M_LF_PowderCoat</code>, <code>M_LF_Wood</code>, <code>M_LF_Stone</code>, <code>M_LF_Fabric</code>, <code>M_LF_Glass</code>, <code>M_LF_Screen</code>, <code>M_LF_Poster</code>, <code>M_LF_Foliage</code>, <code>M_LF_Emissive</code>, <code>M_LF_Display</code>, <code>M_LF_Surface</code>, <code>M_LF_SkyDome</code> and <code>M_LF_MirrorCapture</code>. Every finish is a material instance in <code>/LiftForge/Materials/Instances</code> (<code>MI_LF_*</code>). To change a finish, edit the instance:</p>
+<table>
+<thead>
+<tr>
+<th>Master</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Textured masters (metal, powder coat, wood, stone, fabric)</td>
+<td><code>BaseColor</code>, <code>Normal</code>, <code>ORM</code>, <code>Tiling</code> (metres per repeat; 1 = 100 cm), <code>UVRotation</code>, <code>Tint</code>, <code>TintStrength</code>, <code>RoughnessMin</code>, <code>RoughnessMax</code>, <code>NormalStrength</code>, <code>DetailNormal</code>, <code>DetailTiling</code>, <code>DetailStrength</code>; metal adds <code>Anisotropy</code>, <code>BrushAngle</code>; fabric adds <code>FuzzStrength</code></td>
+</tr>
+<tr>
+<td><code>M_LF_Surface</code></td>
+<td><code>Tint</code>, <code>Metallic</code>, <code>Roughness</code></td>
+</tr>
+<tr>
+<td>Emissive and display</td>
+<td><code>Color</code>, <code>EmissiveStrength</code></td>
+</tr>
+<tr>
+<td><code>M_LF_Glass</code></td>
+<td><code>Tint</code>, <code>Opacity</code>, <code>Roughness</code>, <code>IOR</code>, <code>FresnelExponent</code>, <code>SmudgeMask</code>, <code>SmudgeStrength</code></td>
+</tr>
+<tr>
+<td><code>M_LF_Screen</code></td>
+<td><code>ScreenImage</code>, <code>Brightness</code>, <code>PixelCount</code>, <code>GridStrength</code>, <code>FlipU</code>, <code>FlipV</code></td>
+</tr>
+<tr>
+<td><code>M_LF_Poster</code></td>
+<td><code>PosterImage</code>, <code>PaperRoughness</code>, <code>GlossStrength</code>, <code>FlipU</code>, <code>FlipV</code></td>
+</tr>
+</tbody>
+</table>
+<p>Finish variants you can swap: woods Walnut, Oak, SmokedOak; stones Terrazzo, DarkTerrazzo, Travertine, Marble, StoneTile; metals Steel, Satin, Brass, Bronze, PanelSteel, DarkMetal, Chequer; carpets Carpet, CarpetDark. Set a different instance in the visual set's <em>Material Overrides</em> for the slot you want to change.</p>
+<p>The mesh material slots keep their authored names (<code>M_HQ_Steel</code>, <code>M_HQ_Walnut</code> and so on). A visual set maps each slot to an instance. All master materials have <em>Used with Instanced Static Meshes</em> enabled, so material instances can be used on the instanced parts of tall buildings.</p>
+<h2 id="meshes">Meshes<a class="headerlink" href="#meshes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>291 part meshes (117 shared roles, 174 preset-specific parts) and 8 kit meshes. 30 of the shared meshes (for example <code>SM_HQ_CabinDoor</code> and <code>SM_HQ_CabinFloor</code>) are kit parts for your own visual sets: the presets and the example maps do not use them.</li>
+<li>Each part mesh has 3 LODs: LOD0 authored in Blender, LOD1 (50 % of the triangles) and LOD2 (about 18 % on most meshes, up to 50 % on small parts) generated in Unreal. Each part has simple collision as authored (box; convex for the faceted and half-height walls; none for thin decorative parts, which then use their triangles) and a lightmap UV channel (coordinate index 1). Triangles over all unique part meshes: LOD0 728,333, LOD1 364,169, LOD2 131,695.</li>
+<li>UVs are unwrapped at a real-world scale: 1 UV unit = 100 cm, so every CC0 surface material tiles at its physical size.</li>
+<li>The 8 kit meshes are 1 m primitives with automatic collision and no LODs (188 or 764 triangles).</li>
+<li>Decorative parts follow the configuration's <strong>Detail Draw Distance</strong> (8000 cm by default; 0 disables culling). Collision on the cabin floor, walls and doors stays available at any distance.</li>
+<li>Nanite is not required.</li>
+</ul>
+<h2 id="signage">Signage<a class="headerlink" href="#signage" title="Permanent link">&para;</a></h2>
+<p><code>LiftForge Signage</code> actors (<code>ALFSignage</code>) show an image on any mesh whose image faces use the slots <code>M_HQ_Screen</code> (emissive LCD) or <code>M_HQ_Poster</code> (print). Choose a shipped mesh (ceiling-corner and wall cabin screens, lobby totem, landing screen, menu board, A1 and A2 poster frames, light box, directory board, wall sign) or keep your own mesh with <em>Custom</em>. <em>Screen Image</em> and <em>Poster Image</em> take any texture (35 samples ship: <code>T_LF_Screen_&lt;Name&gt;</code>, <code>T_LF_Screen_&lt;Name&gt;_P</code> portrait, <code>T_LF_Poster_&lt;Name&gt;</code>), <em>Slides</em> with <em>Seconds Per Slide</em> run a slideshow, and <em>Media Texture</em> shows a Media Framework texture (video) on the screen. <code>Set Screen Image</code>, <code>Set Poster Image</code> and <code>Show Slide</code> are Blueprint-callable. Nine of the sample images are not used by the example maps; they are extras for your own scenes.</p>
+<h2 id="textures-and-audio">Textures and audio<a class="headerlink" href="#textures-and-audio" title="Permanent link">&para;</a></h2>
+<ul>
+<li>65 surface maps in 23 sets (20 CC0 surface materials from ambientCG and Poly Haven, 3 procedural), base colour / DirectX normal / packed AO-roughness-metallic; walnut, oak, stone tile, terrazzo and steel at 4096 x 4096, the rest at 2048 x 2048. 35 signage images. Two HDRI cubemaps (<code>T_LF_HDRI_PlacWolnosci</code> and <code>T_LF_HDRI_NeuerZollhof</code>, Poly Haven, CC0), one per showcase look, for the sky light and sky dome.</li>
+<li>19 sound waves (9 effects, 10 spoken announcements) and 3 MetaSound sources (motor, pump, doors).</li>
+<li>Replace any sound by assigning your own sound wave in the configuration's audio pack, or clear the slot. Announcements are optional: leave the floor's <em>Announcement</em> slot and the <em>Doors Opening</em> / <em>Doors Closing</em> slots empty for chime-only operation.</li>
+<li><code>Configuration.Audio.Volume</code> sets the overall volume of one car (0.35 in the presets).</li>
+</ul>
+<h2 id="lighting-of-the-example-maps">Lighting of the example maps<a class="headerlink" href="#lighting-of-the-example-maps" title="Permanent link">&para;</a></h2>
+<p>All maps use dynamic Lumen lighting. There is nothing to bake.</p>
+<h2 id="known-limits-of-the-example-maps">Known limits of the example maps<a class="headerlink" href="#known-limits-of-the-example-maps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Steel doors and panels in the cabins show cloudy reflections under software Lumen. Hardware Lumen removed them in our test, but took roughly two to three times the frame time.</li>
+<li>The tower seen from the street is a plain block without windows, and a thin dark vertical band runs down its east wing.</li>
+<li>The kerb joints in the forecourt read as a saw-tooth edge.</li>
+<li>The Traction hero laylight shows one bright dot and two brighter patches.</li>
+<li>The metal landing sills show dark blotches in close-up.</li>
+</ul>
+<h2 id="make-your-own-visual-set">Make your own visual set<a class="headerlink" href="#make-your-own-visual-set" title="Permanent link">&para;</a></h2>
+<p>Create a <code>ULFVisualSet</code> data asset. Its <em>Part Meshes</em> map assigns a mesh to each role name (for example <code>CabinWall</code> or <code>DoorFrame</code>), with the mesh's authored size (<em>Source Dimensions</em>). The builder scales each part from that size to the size your configuration needs. The additive roles (<code>MRLMachine</code>, <code>MRLController</code>, <code>HallLantern</code>, <code>LandingIndicator</code>, <code>CabinScreenCorner</code>, <code>CabinScreenWall</code>, <code>FoldSeat</code>, <code>Ramp</code>, <code>ControlColumn</code>, <code>GlassFrame</code>, <code>SpotRing</code>, <code>WheelChannel</code>) are placed only when your set binds them. Set the <em>Visual Set</em> on a preset or a car. Leave it empty to build the car from the generated kit instead.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

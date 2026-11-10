@@ -1,0 +1,1302 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bookrt160.github.io/liftforge-docs/api/">
+      
+      
+        <link rel="prev" href="../presets/">
+      
+      
+        <link rel="next" href="../buttons-and-hooks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>How the API fits together - LiftForge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blueprint-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LiftForge Documentation" class="md-header__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiftForge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How the API fits together
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LiftForge Documentation" class="md-nav__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LiftForge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevator Builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets and visual sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the API fits together
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the API fits together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-two-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The two entry points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-events-and-their-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Events and their order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Events and their order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-rejection-reasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call rejection reasons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-status-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Status getters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-move-elevator-to-floor-latent-blueprint-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Move Elevator To Floor (latent Blueprint node)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-banks-registration-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Banks, registration and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5b-multiplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5b. Multiplayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons-and-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help, Phone and Emergency Call buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dispatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank and destination dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-and-faults/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating modes and faults
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inspection views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../own-character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using your own character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VR setup (OpenXR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../npc-riding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC riding guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-partition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World Partition notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits, licences and AI disclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-two-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The two entry points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-events-and-their-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Events and their order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Events and their order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#call-rejection-reasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call rejection reasons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-status-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Status getters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-move-elevator-to-floor-latent-blueprint-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Move Elevator To Floor (latent Blueprint node)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-banks-registration-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Banks, registration and validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5b-multiplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5b. Multiplayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="blueprint-api">Blueprint API<a class="headerlink" href="#blueprint-api" title="Permanent link">&para;</a></h1>
+<p>This page explains how the API fits together. The <a href="../api-reference/">API reference</a> lists the runtime and interaction classes. The AI classes are described in the <a href="../npc-riding/">NPC riding guide</a>, and signage in <a href="../presets/">Presets and visual sets</a>.</p>
+<p>The 1.0 API is stable: names, parameter order and enum values do not change within 1.x; new members are added with defaults. Every item is a Blueprint node, event or property with a tooltip unless it is marked C++ only. A function's Blueprint name is its C++ name split into words (<code>SelectFloor</code> is <strong>Select Floor</strong>).</p>
+<h2 id="1-the-two-entry-points">1. The two entry points<a class="headerlink" href="#1-the-two-entry-points" title="Permanent link">&para;</a></h2>
+<p>Everything that operates a car goes through two functions on <code>ALFElevator</code>. The generated buttons (<code>ULFButtonComponent::PressButton</code>), the operator console, the demo control panel and Blueprints all call them, and so does any network or AI layer you add. A network or AI layer therefore only has to sit in front of these two.</p>
+<table>
+<thead>
+<tr>
+<th>Entry point</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ExecuteElevatorCommand(Command, FloorId, AccessLevel, OriginFloorId, BankOverride)</code></td>
+<td>Any <code>ELFElevatorCommand</code>: cabin call, hall call, destination call, doors, modes, faults, reset, resume, jog, inspection toggles. Returns true when a call was accepted or a service command ran. Raises <code>OnCommandExecuted</code>.</td>
+</tr>
+<tr>
+<td><code>CallToFloor(FloorId, OriginFloorId, AccessLevel)</code></td>
+<td>A trip for a passenger waiting at <code>OriginFloorId</code> who wants to go to <code>FloorId</code> on this car. The car is called to the origin and, when its doors are open there, the destination is selected. An empty origin is a cabin call.</td>
+</tr>
+</tbody>
+</table>
+<p>Routing rules of <code>ExecuteElevatorCommand</code>:</p>
+<ul>
+<li><code>SelectFloor</code> queues a cabin call on the car.</li>
+<li><code>HallCallUp</code> / <code>HallCallDown</code> go to the bank of the car (<code>BankOverride</code>, else <code>GetDispatchBank()</code>), which picks the car; with no bank the car queues the call itself.</li>
+<li><code>DestinationCall</code> goes to <code>Bank-&gt;RequestDestination(OriginFloorId, FloorId)</code>; with no bank it is <code>CallToFloor(FloorId, OriginFloorId)</code> on this car.</li>
+<li><code>EmergencyCall</code>, <code>Help</code> and <code>Phone</code> have no built-in behaviour. They are accepted and raise <code>OnCommandExecuted</code>, which is how a project reacts to those buttons.</li>
+<li>A bank-only panel (a button with a <code>Bank</code> and no <code>Elevator</code>) calls <code>ALFElevatorBank::RequestHallCall</code> / <code>RequestDestination</code>, the bank's own entry points.</li>
+</ul>
+<p><code>ELFElevatorCommand</code> and the shared table:</p>
+<ul>
+<li><code>ULFButtonComponent::Command</code> is still an <code>FName</code>, because levels saved before the enum existed store it. The names never change (<code>Select</code>, <code>Up</code>, <code>Down</code>, <code>Destination</code>, <code>Open</code>, <code>Close</code>, <code>Alarm</code>, <code>EmergencyCall</code>, <code>Help</code>, <code>Phone</code>, <code>Cutaway</code>, <code>Exploded</code>, <code>Labels</code>, <code>Overload</code>, <code>Obstruction</code>, <code>Normal</code>, <code>Independent</code>, <code>Maintenance</code>, <code>FireRecall</code>, <code>OutOfService</code>, <code>DoorJam</code>, <code>PowerLoss</code>, <code>EmergencyBrake</code>, <code>Stuck</code>, <code>Reset</code>, <code>Resume</code>, <code>JogUp</code>, <code>JogDown</code>).</li>
+<li><code>GetCommandType</code> / <code>SetCommandType</code> convert between the name and the enum. A button whose name is not in the table logs one warning when pressed and does nothing, instead of failing silently.</li>
+<li><strong>C++ only</strong> (<code>LFCommands.h</code>, namespace <code>LiftForge::Commands</code>): <code>Info(Command)</code> returns <code>FLFCommandInfo</code> (button name, console caption, panel label, <code>bIsCall</code>); <code>FromButtonName</code>, <code>ToButtonName</code>, <code>ServiceCommands()</code> (the 21 service commands in console and panel order) and <code>FloorCaption</code>. The console and the panel both build from it. The old per-file tables and <code>LFNames.h::Command</code> are gone.</li>
+</ul>
+<h2 id="2-events-and-their-order">2. Events and their order<a class="headerlink" href="#2-events-and-their-order" title="Permanent link">&para;</a></h2>
+<p>All events are multicast delegates on <code>ALFElevator</code> (the bank has <code>OnAssigned</code> and <code>OnCallRejected</code>). They fire on the game thread, from inside the call or tick that causes them.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Parameters</th>
+<th>Fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OnDeparture</code></td>
+<td>Elevator, FloorId</td>
+<td>The car leaves a floor (FloorId is the floor it leaves).</td>
+</tr>
+<tr>
+<td><code>OnArrival</code></td>
+<td>Elevator, FloorId</td>
+<td>The car stops level at a floor, before the doors start to open. Also fires at a stop where the doors stay shut (fire recall stopover; the stop after Maintenance was entered while moving).</td>
+</tr>
+<tr>
+<td><code>OnStateChanged</code></td>
+<td>Elevator, State</td>
+<td>Every change of <code>ELFElevatorState</code>.</td>
+</tr>
+<tr>
+<td><code>OnDoorsOpening</code></td>
+<td>Elevator, FloorId</td>
+<td>The state becomes <code>Opening</code>.</td>
+</tr>
+<tr>
+<td><code>OnDoorsOpened</code></td>
+<td>Elevator, FloorId</td>
+<td>The state becomes <code>Open</code> (doors fully open).</td>
+</tr>
+<tr>
+<td><code>OnDoorsClosing</code></td>
+<td>Elevator, FloorId</td>
+<td>The state becomes <code>Closing</code>.</td>
+</tr>
+<tr>
+<td><code>OnDoorsClosed</code></td>
+<td>Elevator, FloorId</td>
+<td>The doors reach fully closed.</td>
+</tr>
+<tr>
+<td><code>OnDoorsChanged</code></td>
+<td>Elevator, bOpen</td>
+<td>Fully open (true) or fully closed (false). Kept from 0.x.</td>
+</tr>
+<tr>
+<td><code>OnModeChanged</code></td>
+<td>Elevator, Mode</td>
+<td>The operating mode changes.</td>
+</tr>
+<tr>
+<td><code>OnFaultChanged</code></td>
+<td>Elevator, Fault</td>
+<td>A fault starts or is reset (Fault None).</td>
+</tr>
+<tr>
+<td><code>OnCallRejected</code></td>
+<td>Elevator, FloorId, Reason</td>
+<td>A call is refused. Reasons: <code>ELFCallRejectReason</code>.</td>
+</tr>
+<tr>
+<td><code>OnOverloadChanged</code></td>
+<td>Elevator, bOverloaded</td>
+<td>The load crosses the capacity, either way.</td>
+</tr>
+<tr>
+<td><code>OnObstructionChanged</code></td>
+<td>Elevator, bObstructed</td>
+<td>The door light curtain (or the simulated flag) becomes blocked or free.</td>
+</tr>
+<tr>
+<td><code>OnPassengerEntered</code> / <code>OnPassengerExited</code></td>
+<td>Elevator, Passenger</td>
+<td>An actor that adds load (pawn, actor with <code>ULFLoadComponent</code>, simulating physics body) enters or leaves the cabin volume. An actor destroyed inside the cabin leaves without an exit event.</td>
+</tr>
+<tr>
+<td><code>OnCommandExecuted</code></td>
+<td>Elevator, Command, FloorId, bAccepted</td>
+<td>After <code>ExecuteElevatorCommand</code> ran (also for refused commands).</td>
+</tr>
+</tbody>
+</table>
+<p>Order guarantees, tested by <code>LiftForge.API.EventOrder</code>. Over one trip with the dwell time running out:</p>
+<p><code>OnDeparture</code>, <code>OnStateChanged(Accelerating ... Leveling)</code>, <code>OnStateChanged(Idle)</code>, <code>OnArrival</code>, <code>OnStateChanged(Opening)</code>, <code>OnDoorsOpening</code>, <code>OnStateChanged(Open)</code>, <code>OnDoorsOpened</code>, <code>OnDoorsChanged(true)</code>, <code>OnStateChanged(Closing)</code>, <code>OnDoorsClosing</code>, <code>OnStateChanged(Idle)</code>, <code>OnDoorsChanged(false)</code>, <code>OnDoorsClosed</code>.</p>
+<p>So a door event always follows the matching state change, and when a handler runs the getters already show the new state. <strong>Change from 0.x:</strong> <code>OnDoorsChanged(false)</code> used to fire before the state became Idle; it now fires after, like the open case.</p>
+<p>An obstruction while the doors close gives <code>OnObstructionChanged(true)</code>, <code>OnStateChanged(Opening)</code>, <code>OnDoorsOpening</code>, ..., <code>OnDoorsOpened</code> (the doors reverse). A mode change raises <code>OnModeChanged</code> first, before any state change it causes.</p>
+<p>The light curtain is read while the doors are not fully closed, or whenever something is bound to <code>OnObstructionChanged</code>, so a parked car with closed doors and no listener does not query the overlaps.</p>
+<h3 id="call-rejection-reasons">Call rejection reasons<a class="headerlink" href="#call-rejection-reasons" title="Permanent link">&para;</a></h3>
+<p><code>ELFCallRejectReason</code>: <code>UnknownFloor</code>, <code>SameFloor</code>, <code>InvalidDirection</code> (no direction, Up at the top, Down at the bottom), <code>AccessDenied</code>, <code>Fault</code>, <code>ResumeRequired</code> (reset, waiting for Resume), <code>OutOfService</code>, <code>Maintenance</code>, <code>FireRecall</code>, <code>IndependentService</code> (hall call in Independent mode), <code>InvalidConfiguration</code>, <code>NoElevatorAvailable</code> (bank only). <code>GetLastCallRejection</code> returns the reason of the last call (None after an accepted call). A bank forwards the reason of the car it chose, or reports <code>UnknownFloor</code> / <code>AccessDenied</code> / <code>NoElevatorAvailable</code> / <code>SameFloor</code> itself through its own <code>OnCallRejected(OriginFloorId, DestinationFloorId, Reason)</code>.</p>
+<h2 id="3-status-getters">3. Status getters<a class="headerlink" href="#3-status-getters" title="Permanent link">&para;</a></h2>
+<p><code>IsMoving</code>, <code>GetTargetFloor</code> (the floor of the trip in progress; None when not moving), <code>GetTravelDirection</code> (the committed direction, None when the car has nothing to do; it stays set while the doors are open), <code>GetFloors</code>, <code>GetFloorIndex</code> (-1 for an unknown floor), <code>GetCurrentFloor</code>, <code>GetState</code>, <code>GetOperatingMode</code>, <code>GetFault</code>, <code>GetDoorFraction</code>, <code>GetCarElevation</code>, <code>GetCarVelocity</code>, <code>GetRequests</code>, <code>IsOverloaded</code>, <code>IsDoorObstructed</code>, <code>GetLoadKg</code>, <code>GetOccupants</code>, <code>CanServeFloor</code>, <code>EstimateArrivalSeconds</code>, <code>GetStatusText</code>, <code>GetLastCallRejection</code>, <code>GetDispatchBank</code>, <code>GetCabinFloor</code>. <code>GetConfigurationRef()</code> is the C++ only const-reference accessor of the configuration.</p>
+<h2 id="4-move-elevator-to-floor-latent-blueprint-node">4. Move Elevator To Floor (latent Blueprint node)<a class="headerlink" href="#4-move-elevator-to-floor-latent-blueprint-node" title="Permanent link">&para;</a></h2>
+<p><code>ULFMoveElevatorToFloorAction::MoveElevatorToFloor(WorldContext, Elevator, FloorId, OriginFloorId, AccessLevel, TimeoutSeconds)</code>, shown as <strong>Move Elevator To Floor</strong> with two exec outputs:</p>
+<ul>
+<li><strong>Arrived</strong> (Elevator, FloorId): the car is level with <code>FloorId</code> and its doors are fully open. With <code>OriginFloorId</code> the node counts only after the car has opened its doors at the origin.</li>
+<li><strong>Failed</strong> (Elevator, <code>ELFMoveFailure</code>, <code>ELFCallRejectReason</code>): <code>CallRejected</code> (reason set), <code>Fault</code>, <code>ModeChanged</code> (any mode other than Normal discards the queued calls), <code>ElevatorDestroyed</code>, <code>TimedOut</code> (<code>TimeoutSeconds</code> &gt; 0), <code>Cancelled</code> (<code>Cancel</code>).</li>
+</ul>
+<p>Exactly one of the two fires, once. It completes at once if the car already stands open at the floor. In C++ call <code>Activate()</code> after creating it (Blueprints do this automatically).</p>
+<h2 id="5-banks-registration-and-validation">5. Banks, registration and validation<a class="headerlink" href="#5-banks-registration-and-validation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A car belongs to a bank when the bank lists it in <code>Elevators</code>, when the car names the bank in <code>DispatchBank</code>, when <code>BankName</code> matches, or after <code>ALFElevatorBank::RegisterElevator</code>.</li>
+<li>Linking is two-way and automatic. At BeginPlay a car that names a bank calls <code>RegisterElevator</code> on it, and a bank calls it for every car it lists, so the car's <code>DispatchBank</code> is set and its hall buttons reach the bank. The authored <code>Elevators</code> array is never edited: registered cars are kept in a transient list and <code>GetMembers</code> returns the union.</li>
+<li><code>RegisterElevator</code> returns false (and logs) when the car already belongs to another bank or its <code>BankName</code> differs. <code>UnregisterElevator</code> removes the car and clears its <code>DispatchBank</code>. A call assigned to a car that leaves the bank is reassigned on the next bank tick.</li>
+<li><code>ValidateBank(Errors)</code>: no cars, a car that belongs to another bank, a <code>BankName</code> conflict, two cars with the same <code>ElevatorId</code>, a car that shares no floor with the others. In the editor <code>CheckForErrors</code> reports the same in Map Check; at BeginPlay the bank logs one warning.</li>
+<li>Calls assigned by the bank are re-evaluated on every bank tick (every 0.1 s): when the assigned car gets a fault, leaves Normal mode, leaves the bank, or is no longer a member, the call goes to the best remaining car, and waits unassigned if there is none.</li>
+</ul>
+<h2 id="5b-multiplayer">5b. Multiplayer<a class="headerlink" href="#5b-multiplayer" title="Permanent link">&para;</a></h2>
+<p>No signature in sections 1 to 5 changed. What is new is how they behave on a network client, plus one component and a few getters.</p>
+<p><strong>Server-authoritative cars.</strong> <code>ALFElevator</code> replicates (always relevant, no per-frame position). The server runs the state machine and writes a compact state (<code>FLFElevatorNetState</code>, internal): state, mode, fault, docked/target floor, the motion profile with its server start time, the door fraction and time of the last door change, lit calls (one bit per floor), load, light curtain, reset latch, the inspection views, and a small ring of the last 32 discrete events (state, mode, fault, arrival, departure, overload, obstruction, alarm) in the order the server raised them. A client rebuilds the motion and the doors from that state and the server clock (<code>GetServerWorldTimeSeconds</code>, smoothed so it never jumps), so a car moves smoothly between updates; a position jump after a late update (a fault stop arriving after a lost packet) is blended out over about 0.3 s. Also replicated: <code>Preset</code>, <code>Configuration</code>, <code>bUseConfigurationOverride</code>, <code>ImportedParts</code>, <code>ElevatorId</code>, <code>BankName</code>, <code>DispatchBank</code>, <code>bShaftCollision</code>, <code>bStaticFixedParts</code> (a change on the server rebuilds the car on every client, after the trip if it moves). The bank dispatches on the server only.</p>
+<p><strong>On a client, every command is sent to the server.</strong> <code>ExecuteElevatorCommand</code>, <code>CallToFloor</code>, <code>SelectFloor</code>, <code>RequestHallCall</code>, <code>RequestDoorOpen/Close</code>, <code>SetOperatingMode</code>, <code>InjectFault</code>, <code>ResetFault</code>, <code>ResumeOperation</code>, <code>MaintenanceJog</code>, the <code>Toggle*</code> functions, <code>ALFElevatorBank::RequestHallCall/RequestDestination</code> and <code>ULFButtonComponent::PressButton</code> do not change the client's copy: they send the request through the local player's <code>ULFElevatorInteractorComponent</code>. Their return value on a client means "sent" (the bank functions return null there). The press animation and button sound play at once on the client. <code>PlayAlarm</code> and <code>PlayButtonSound</code> stay local sounds. Cars with <code>bReplicates</code> turned off keep the single-player behaviour on every machine.</p>
+<p><strong>Events on clients.</strong> Every machine raises the elevator events for every car in the server's order (and so in the documented order of section 2): departure, the moving phases, arrival, door phases, mode, fault, overload, obstruction, and the alarm sound. The client replays the event ring, so several events that reach it in one update (the server sends at most its net rate) still come in the right order. When an update is lost, Unreal resends its properties later, so a newer update can arrive first: the client replays up to the missing entry and waits for the resend instead of skipping it. A client so far behind that the ring no longer reaches back takes the state as it is. <code>OnPassengerEntered/Exited</code> and <code>GetOccupants</code> stay local (each machine sees who stands in its cabin). Per-request events: the requesting client raises <code>OnCommandExecuted</code> and, when refused, <code>OnCallRejected</code> on its own copy when the server's answer comes back; a bank request raises <code>OnAssigned</code> or the bank's <code>OnCallRejected</code> on the requester's copy. <code>Move Elevator To Floor</code> works on clients too (a refusal arrives as an event). A client that joins late takes the current state as it is and raises only <code>OnModeChanged</code>, <code>OnStateChanged</code> and <code>OnFaultChanged</code> for values that differ from the defaults; nothing older is replayed.</p>
+<p><strong><code>ULFElevatorInteractorComponent</code></strong> (Runtime, player-owned). The server adds one to every player controller once a networked world has LiftForge cars (<code>ULFElevatorSettings::bAutoAddInteractor</code>, default on), or add it yourself to your PlayerController or pawn. Server-side checks on every request: <code>AccessLevel</code> (the server uses the lower of this and the level the caller asked for, so a client can lower but never raise its level), <code>bAllowServiceCommands</code> (off by default: only calls, doors, alarm and the help buttons), <code>MaxRequestDistance</code> (to the car's and shaft's bounds; 0, the default, turns the check off), <code>MaxRequestsPerSecond</code> (flood guard, default 20) and the overridable <code>CanRunRequest</code>. Functions: <code>ExecuteElevatorCommand</code>, <code>CallToFloor</code>, <code>RequestHallCall</code>, <code>RequestDestination</code>, <code>PressButton</code> (use them directly for split-screen), <code>FindLocalInteractor</code>, <code>FindOrAddInteractor</code>, event <code>OnRequestCompleted</code>. Set <code>AccessLevel</code> in your game mode's Post Login, as <code>ALFDemoGameMode</code> does (level 9 and service commands for every demo player).</p>
+<p><strong>Getters.</strong> <code>ALFElevator::IsNetworkProxy</code> and <code>ALFElevatorBank::IsNetworkProxy</code> (true on a client copy). On a client <code>GetCurrentFloor</code> ignores the short visual blend the client applies after a correction.</p>
+<p><strong>Inspection views are shared.</strong> Cutaway, labels and exploded view go through the server and change for every player (the exploded view also puts the car into Maintenance, which only the server can do). Setting <code>bCutaway</code>, <code>bShowPartLabels</code> or <code>ExplodedAmount</code> directly on a client copy is a local override that lasts until the server changes that view.</p>
+<p><strong>Server-side callers (AI).</strong> An AI controller or any server code calls <code>CallToFloor</code>, <code>ExecuteElevatorCommand</code> or <code>ALFElevatorBank::RequestDestination</code> on the server's actors directly, with its own access level, exactly as in single player; no interactor and no RPC are involved, and every client sees the result.</p>
+<p><strong>Riding.</strong> Generated components that a pawn can stand on (cabin floor, sills, shaft walls) have the same name on the server and every client and are network-addressable, so CharacterMovement can send the cabin floor as its movement base. Custom characters: see <a href="../own-character/#multiplayer-settings">Using your own character</a>; the important one is <code>bStayBasedInAir = true</code> on the CharacterMovement component.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

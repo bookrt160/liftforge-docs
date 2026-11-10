@@ -1,0 +1,1450 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bookrt160.github.io/liftforge-docs/npc-riding/">
+      
+      
+        <link rel="prev" href="../multiplayer/">
+      
+      
+        <link rel="next" href="../world-partition/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>NPC riding guide - LiftForge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#npc-riding-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LiftForge Documentation" class="md-header__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiftForge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NPC riding guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LiftForge Documentation" class="md-nav__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LiftForge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevator Builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets and visual sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the API fits together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons-and-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help, Phone and Emergency Call buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dispatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank and destination dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-and-faults/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating modes and faults
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inspection views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../own-character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using your own character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VR setup (OpenXR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC riding guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC riding guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-npc-riding-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What NPC riding does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ways-to-make-an-npc-ride" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ways to make an NPC ride
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-navigation-links-a-plain-move-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Navigation links (a plain Move To)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-behaviour-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Behaviour Tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-statetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. StateTree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-blueprint-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Blueprint node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-queueing-doors-load-and-faults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Queueing, doors, load and faults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-you-can-use-without-the-npc-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. What you can use without the NPC module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-multiplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Multiplayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-the-example-npcs-in-the-showcase-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. The example NPCs in the showcase maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. The example NPCs in the showcase maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#character-size-and-door-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character size and door width
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-partition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World Partition notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits, licences and AI disclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-npc-riding-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What NPC riding does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ways-to-make-an-npc-ride" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ways to make an NPC ride
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-navigation-links-a-plain-move-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Navigation links (a plain Move To)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-behaviour-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Behaviour Tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-statetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. StateTree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-blueprint-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Blueprint node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-queueing-doors-load-and-faults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Queueing, doors, load and faults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-what-you-can-use-without-the-npc-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. What you can use without the NPC module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-multiplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Multiplayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-the-example-npcs-in-the-showcase-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. The example NPCs in the showcase maps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. The example NPCs in the showcase maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#character-size-and-door-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Character size and door width
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="npc-riding-guide">NPC riding guide<a class="headerlink" href="#npc-riding-guide" title="Permanent link">&para;</a></h1>
+<p>LiftForge can let AI characters use cars on their own: they call the car, wait politely, board, press their floor, ride and get out. There are two ways to use it: add <strong>navigation links</strong> and use a plain <strong>Move To</strong>, or call a <strong>ride task</strong> from a Behaviour Tree, a StateTree or a Blueprint.</p>
+<blockquote>
+<p>The sample NPC and the NPC demo described in section 10 are part of the <code>LF_Showcase_Warm</code> and <code>LF_Showcase_Noir</code> maps: press Play and watch the first three cars.</p>
+</blockquote>
+<h2 id="1-what-npc-riding-does">1. What NPC riding does<a class="headerlink" href="#1-what-npc-riding-does" title="Permanent link">&para;</a></h2>
+<p>The NPC code is a separate module, <strong>LiftForgeAI</strong>, so the core runtime stays free of AI dependencies. The plugin enables the engine plugins <strong>StateTree</strong> and <strong>GameplayStateTree</strong> for it.</p>
+<p>A ride goes through five phases:</p>
+<ol>
+<li><strong>Approaching.</strong> The NPC walks to a waiting spot beside the landing door. Far landings use the AI controller's pathfinding when there is a navigation mesh.</li>
+<li><strong>Waiting.</strong> The NPC stands at its waiting spot and presses the call button again every 2 seconds while no serving car stands open there. If a crowd pushes it into the light curtain, it boards on its turn or steps straight out.</li>
+<li><strong>Boarding.</strong> The NPC walks in along the door axis, once the doors have been open for a short moment and nobody is getting out.</li>
+<li><strong>Riding.</strong> The NPC presses its floor, stands on a free cabin spot clear of the doors and turns to the door it will leave by.</li>
+<li><strong>Exiting.</strong> The NPC walks out along the door axis and to a spot beside the door.</li>
+</ol>
+<p>A ride runs on the <strong>server only</strong>. See section 9.</p>
+<h2 id="2-ways-to-make-an-npc-ride">2. Ways to make an NPC ride<a class="headerlink" href="#2-ways-to-make-an-npc-ride" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Way</th>
+<th>Where</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Elevator Nav Links</strong> (component)</td>
+<td>Add to a placed car</td>
+<td>A plain <strong>Move To</strong> across floors works. Pathfinding plans through the car, the AI rides and walks on.</td>
+</tr>
+<tr>
+<td><strong>Ride Elevator To Floor</strong> (Behaviour Tree task)</td>
+<td>Behaviour Trees</td>
+<td>Succeeds when the pawn is out of the car on the floor, fails otherwise.</td>
+</tr>
+<tr>
+<td><strong>Ride Elevator To Floor</strong> (StateTree task, category LiftForge)</td>
+<td>StateTrees</td>
+<td>Running while riding, Succeeded or Failed at the end.</td>
+</tr>
+<tr>
+<td><strong>AI Ride Elevator</strong> (latent Blueprint node)</td>
+<td>Any Blueprint</td>
+<td>Exec pins <strong>Arrived</strong> and <strong>Failed</strong>. Exactly one fires, once.</td>
+</tr>
+</tbody>
+</table>
+<p>All of them drive the same component, <strong>Elevator Ride</strong> (<code>LFElevatorRideComponent</code>). It is added to the pawn automatically; place it yourself to tune it.</p>
+<h2 id="3-navigation-links-a-plain-move-to">3. Navigation links (a plain Move To)<a class="headerlink" href="#3-navigation-links-a-plain-move-to" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select a placed car and <strong>Add Component &gt; Elevator Nav Links</strong>.</li>
+<li><strong>Rebuild navigation</strong> (Build &gt; Build Paths) and <strong>save the map</strong>. Link ids are generated in the editor and saved with the component, so a navigation mesh built in the editor finds its links in a cooked game.</li>
+<li>Use a normal <strong>Move To</strong> to a point on another floor. The path goes through the car: the link pauses the move, runs a ride, lets the pawn out exactly at the link end and resumes the move. A failed ride aborts the move, and the AI's Move To fails so your logic can re-plan.</li>
+</ol>
+<p>Setup notes:</p>
+<ul>
+<li>Put a <code>NavMeshBoundsVolume</code> around every landing of every floor, plus about 2 m. Agent radius 34 to 42 cm and agent height at least 180 cm are suitable. A static navigation mesh is fine: the links are baked.</li>
+<li>The component makes one link per pair of floors, in both directions, between landing points <code>LandingDistance</code> (120 cm) out from the landing doors. Keep the landing walkable at least that far.</li>
+<li>Link cost is the vertical distance plus an entering cost (600, about six metres of walking, for the wait). Short hops prefer stairs where there are any.</li>
+<li>Keep <code>bExcludeCabinFromNavigation</code> on (default). In game, the cabin parts and landing door leaves then stop affecting navigation, so a runtime-built navigation mesh is not rebuilt while the car moves.</li>
+<li>After you change floors at runtime, call <strong>Refresh Links</strong>.</li>
+<li><strong>Availability.</strong> Links of a car that cannot serve (a fault, any mode other than Normal; for a bank, when no member can serve) are skipped by new path queries.</li>
+<li><strong>Access levels.</strong> A link to or from a floor with an access level is used only by an AI whose <strong>Elevator Ride</strong> component has <strong>Default Access Level</strong> at least that level (staff, guards). For everyone else pathfinding finds another way, or none. <code>DefaultAccessLevel</code> is 0 by default and is also the level of rides that links start.</li>
+</ul>
+<p>Properties: <code>LinkAreaClass</code>, <code>LandingDistance</code>, <code>CallMode</code>, <code>RideTimeoutSeconds</code>, <code>bExcludeCabinFromNavigation</code>, <code>SupportedAgents</code>. Functions: <strong>Get Elevator</strong>, <strong>Get Link Count</strong>, <strong>Refresh Links</strong>.</p>
+<h2 id="4-behaviour-tree">4. Behaviour Tree<a class="headerlink" href="#4-behaviour-tree" title="Permanent link">&para;</a></h2>
+<p>Add the task <strong>Ride Elevator To Floor</strong> to a sequence. It succeeds when the pawn is out of the car on the floor and fails otherwise; aborting the task cancels the ride.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ElevatorKey</code></td>
+<td>An object key holding a car or a bank. Empty: the nearest car that serves the floor.</td>
+</tr>
+<tr>
+<td><code>DestinationFloor</code> or <code>DestinationFloorKey</code></td>
+<td>The floor, as a fixed value or a name key.</td>
+</tr>
+<tr>
+<td><code>AccessLevel</code></td>
+<td>The access level used for the ride.</td>
+</tr>
+<tr>
+<td><code>CallMode</code></td>
+<td>See section 7.</td>
+</tr>
+<tr>
+<td><code>TimeoutSeconds</code></td>
+<td>0 for no limit.</td>
+</tr>
+</tbody>
+</table>
+<p>A minimal tree: Sequence [ <strong>Ride Elevator To Floor</strong> (destination floor key), <strong>Move To</strong> (room) ].</p>
+<h2 id="5-statetree">5. StateTree<a class="headerlink" href="#5-statetree" title="Permanent link">&para;</a></h2>
+<p>Add the task <strong>Ride Elevator To Floor</strong> (category LiftForge) to a state of a StateTree that uses the schema "StateTree AI Component". Inputs: <code>Pawn</code> (binds automatically to the AI schema's actor), an optional <code>ElevatorOrBank</code>, and parameters <code>DestinationFloor</code>, <code>AccessLevel</code>, <code>CallMode</code>, <code>TimeoutSeconds</code>. Outputs: <code>Failure</code> and <code>RejectReason</code>. The task is Running while it rides and finishes with Succeeded or Failed; leaving the state cancels the ride.</p>
+<p>A minimal tree: Idle (Delay) → Ride (task) → Walk (Move To).</p>
+<h2 id="6-blueprint-node">6. Blueprint node<a class="headerlink" href="#6-blueprint-node" title="Permanent link">&para;</a></h2>
+<p><strong>AI Ride Elevator</strong> is a latent node. Exec pins: <strong>Arrived</strong> (Rider, Elevator, Floor Id) and <strong>Failed</strong> (Rider, Elevator, Failure, Reject Reason). Exactly one fires, once. <strong>Cancel</strong> ends the ride with Cancelled.</p>
+<p>The failure is a <code>ELFRideFailure</code>: <code>InvalidRequest</code>, <code>CallRejected</code>, <code>ServiceUnavailable</code>, <code>Interrupted</code>, <code>Blocked</code> (could not reach the landing, the car or the exit in time, or could not board within <code>BoardStallSeconds</code>), <code>TimedOut</code>, <code>Cancelled</code>, <code>ElevatorDestroyed</code>. For <code>CallRejected</code> the second output is the <code>ELFCallRejectReason</code>.</p>
+<p>If you want to drive the ride yourself, use the <strong>Elevator Ride</strong> component: <strong>Start Ride</strong> (elevator, destination floor, origin floor, access level, call mode, timeout), <strong>Cancel Ride</strong>, and the events <strong>On Ride Arrived</strong>, <strong>On Ride Failed</strong> and <strong>On Ride Phase Changed</strong>, with status getters (<strong>Is Riding</strong>, <strong>Get Ride Phase</strong>, and so on).</p>
+<h2 id="7-queueing-doors-load-and-faults">7. Queueing, doors, load and faults<a class="headerlink" href="#7-queueing-doors-load-and-faults" title="Permanent link">&para;</a></h2>
+<p><strong>Queueing and doors</strong></p>
+<ul>
+<li>Waiting spots alternate left and right of the door, and are placed clear of the light curtain.</li>
+<li>People get out first. A rider waits until the doors have been open for <code>BoardDelaySeconds</code>, the curtain is free and no rider getting off at this floor is still inside. A player, or a pawn without the Elevator Ride component, counts only while it stands in the door curtain, so an NPC can board while such a pawn is still inside.</li>
+<li>One rider goes through the door at a time, and first come boards first.</li>
+<li>On the way out, the rider nearest the door goes first and presses Door Open if the doors start closing.</li>
+<li>A rider that is not yet in the doorway gives up boarding when the doors start to close: an NPC does not wait in the doorway. Riders inside stand clear of the curtain, so the doors close after the normal dwell.</li>
+</ul>
+<p><strong>Load.</strong> A rider boards only when the car's load, the riders already walking in and its own mass fit the capacity, and a free cabin spot exists. Otherwise it lets the car go and waits for the next one. A rider counts its <strong>LFLoadComponent</strong> mass, or the car's <strong>Passenger Mass Kg</strong>. A 220 × 240 cm cabin takes <strong>4 NPCs</strong> of radius 34 cm; extra NPCs take the next car, even when the capacity would allow more.</p>
+<p><strong>Banks and call modes.</strong> Set <code>CallMode</code> on the task, the component or the links:</p>
+<ul>
+<li><strong>Hall Call</strong> (default). The NPC presses the landing button for its direction and the destination inside. With a bank, the call goes through the bank and the NPC takes any member car that opens for its direction. With destination dispatch the NPC boards only the car the bank assigned.</li>
+<li><strong>Destination Dispatch.</strong> The NPC asks the bank for its destination and boards only the assigned car. Without a bank, it calls the car with <strong>Call To Floor</strong>.</li>
+<li><strong>This Car Only.</strong> The call goes to this car even when it belongs to a bank. This also rides a car in Independent mode when an attendant opens it.</li>
+</ul>
+<p><strong>Rejections and faults.</strong> These end the ride at once: unknown floor, same floor, invalid direction, access denied, invalid configuration. Any other refusal, or a car that stops serving (fault, out of service, maintenance, fire recall, independent service, resume required), is waited out for <code>ServiceWaitSeconds</code> (60 by default), then the ride fails with Service Unavailable (outside the car) or Interrupted (inside). If the car opens its doors while it is not serving the trip (Out of Service letting passengers out, fire recall), the rider gets out there and the ride ends Interrupted with the reason. In a Maintenance stop the doors stay shut, so a rider inside presses Door Open, gets out, and the ride ends Interrupted.</p>
+<p><strong>Characters and other pawns.</strong> Characters ride on the cabin floor as their movement base. The component steers them with movement input. Other pawns (no CharacterMovement) are carried by the component while inside.</p>
+<p><strong>Tuning</strong> (defaults, on the <strong>Elevator Ride</strong> component): <code>AcceptanceRadius</code> 25 cm, <code>WaitDistance</code> 70 cm, <code>WaitSideClearance</code> 35 cm, <code>ExitDistance</code> 170 cm, <code>BoardDelaySeconds</code> 1.2, <code>BoardStallSeconds</code> 45, <code>FaceDoorDegreesPerSecond</code> 270, <code>BoardTimeoutSeconds</code> 8, <code>ApproachTimeoutSeconds</code> 60, <code>ExitTimeoutSeconds</code> 10, <code>ServiceWaitSeconds</code> 60, <code>RetryIntervalSeconds</code> 2, <code>MoveInputScale</code> 1, <code>bUseNavigationToApproach</code> on, <code>DefaultAccessLevel</code> 0.</p>
+<h2 id="8-what-you-can-use-without-the-npc-module">8. What you can use without the NPC module<a class="headerlink" href="#8-what-you-can-use-without-the-npc-module" title="Permanent link">&para;</a></h2>
+<p>An AI pawn can also use a car with the public API alone: <strong>Call To Floor</strong>, the latent <strong>Move Elevator To Floor</strong> node, the door and obstruction events, <strong>Get Occupants</strong>, the call-rejection reason, and <strong>Request Destination</strong> on a bank. The NPC module adds the walking, queueing and boarding on top of these. See <a href="../api/">Blueprint API</a> and <a href="../dispatch/">Bank and destination dispatch</a>.</p>
+<h2 id="9-multiplayer">9. Multiplayer<a class="headerlink" href="#9-multiplayer" title="Permanent link">&para;</a></h2>
+<p>Riding is <strong>server only</strong>. <strong>Start Ride</strong> on a client logs a warning and fails with Invalid Request. NPCs call the car on the server's actors directly with their own access level: no interactor component, no network request. Clients see NPCs through normal Character replication and see the cars through the replicated state.</p>
+<p>Check <strong>Has Authority</strong> before running NPC decision logic. The elevator events now also fire on clients. See the <a href="../multiplayer/">Multiplayer guide</a>. Give NPC characters <code>bStayBasedInAir</code> if they can jump.</p>
+<h2 id="10-the-example-npcs-in-the-showcase-maps">10. The example NPCs in the showcase maps<a class="headerlink" href="#10-the-example-npcs-in-the-showcase-maps" title="Permanent link">&para;</a></h2>
+<p>Each example map has six sample NPCs that walk between the floors and ride the cars on their own. Press Play and watch the first three cars.</p>
+<ul>
+<li><strong>The NPC.</strong> <code>LiftForge Content/Examples/AI/BP_LF_SampleNPC</code> is a Blueprint of <strong>LiftForge Sample NPC</strong> (<code>ALFSampleNPC</code>, a Character with an <strong>Elevator Ride</strong> component, UE's default 34 x 88 cm capsule and a simple body mesh). Its controller, <strong>LiftForge Sample NPC Controller</strong>, waits 2 to 6 seconds, picks a target point on another floor and walks there with a plain <strong>Move To</strong>. The cars do the rest through their Elevator Nav Links. It does not use a Behaviour Tree or a StateTree, so you can see that no elevator logic is needed in the AI.</li>
+<li><strong>The cars.</strong> The Traction car and the two MRL cars carry the <strong>Elevator Nav Links</strong> component. The Traction car and the first MRL car use hall calls; the second MRL car uses destination dispatch.</li>
+<li><strong>The places.</strong> Thirteen target points (tag <code>LiftForgeNPCTarget</code>) stand on the landings in front of those cars.</li>
+<li><strong>Navigation.</strong> A navigation bounds volume covers the three lobbies and a RecastNavMesh actor with <em>Runtime Generation = Dynamic</em> builds the mesh when the level starts, so nothing baked can go out of date.</li>
+<li><strong>Multiplayer.</strong> The map has four player starts, so a listen server with several clients works at once (<strong>Play &gt; Number of Players 2+, Net Mode Play As Listen Server</strong>). The NPCs run on the server only. In the release check (a listen server and two clients, 100 ms round trip, 1 % packet loss, UE 5.6, 5.7 and 5.8), NPCs riding a moving car stayed on its floor on both clients: the largest frame-to-frame change of an NPC's height above the cabin floor was 0.7 cm, and the spread over a ride under 1.6 cm.</li>
+<li><strong>Known limit.</strong> In a test on the Warm map (6 runs of 170 s), 4 of 46 rides of the sample NPCs ended with Blocked while the rider was getting out of the car. The cause is not known. Your own logic should expect a Blocked result and give the NPC a new goal.</li>
+</ul>
+<p>The sample NPC uses the defaults of the Elevator Ride component and the engine's default Character capsule (34 x 88 cm). It is not shrunk to fit. The showcase lobby walls stand 46 cm in front of the landing doors, with an opening only 30 cm wider than the door. A rider finds its way there without tuning: when the waiting spot (or the way from it to the door) would touch level geometry, the Elevator Ride component moves the spot out in steps of 10 cm, up to 150 cm, until a pawn of its size fits and can walk sideways to the door axis and straight in; it then lines up with the door before it enters, instead of cutting the corner of the wall. Static and dynamic level geometry counts; other pawns and the car itself do not. <strong>Wait Distance</strong> is the starting point of that search, so you rarely need to change it; raise it yourself if your recess is deeper than 1.5 m or you want the riders to stand further back.</p>
+<h3 id="character-size-and-door-width">Character size and door width<a class="headerlink" href="#character-size-and-door-width" title="Permanent link">&para;</a></h3>
+<p>A rider fits a car when its capsule is narrower than the door: <strong>2 x radius + 6 cm must not exceed the clear door width</strong> (<code>Door Width</code> of the configuration). The release check (<code>LiftForge.Content.StandardCharacterRides</code>) puts a plain Character in front of each of the nine showcase cars and rides it from the first to the second floor:</p>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Door width</th>
+<th>Largest radius (rule)</th>
+<th>34 x 88 (UE default)</th>
+<th>42 x 96</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traction, MRL 1000, Panoramic, Hydraulic, Platform</td>
+<td>90 cm</td>
+<td>42 cm</td>
+<td>rides</td>
+<td>rides</td>
+</tr>
+<tr>
+<td>MRL 630, Cycle</td>
+<td>80 cm</td>
+<td>37 cm</td>
+<td>rides</td>
+<td>does not fit (84 cm capsule, 80 cm door)</td>
+</tr>
+<tr>
+<td>Bed 2500</td>
+<td>130 cm</td>
+<td>62 cm</td>
+<td>rides</td>
+<td>rides</td>
+</tr>
+<tr>
+<td>Goods 2000</td>
+<td>140 cm</td>
+<td>67 cm</td>
+<td>rides</td>
+<td>rides</td>
+</tr>
+</tbody>
+</table>
+<p>The cabin spots also depend on the radius: a 110 x 140 cm cabin (MRL 630) has room for <strong>one</strong> rider of radius 34 cm clear of the door light curtain, so a second NPC takes the next car. If your character is wider than the door of a preset, widen <strong>Door Width</strong> (and the cabin) of your configuration; the NPC module does not squeeze a capsule through a door.</p>
+<p>To build your own: a Character with an AI controller, an <strong>Elevator Nav Links</strong> component on every car, a navigation bounds volume over the landings, and a Behaviour Tree that does Move To to a point on another floor, or the <strong>Ride Elevator To Floor</strong> task, or the <strong>AI Ride Elevator</strong> node.</p>
+<h2 id="11-troubleshooting">11. Troubleshooting<a class="headerlink" href="#11-troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>NPCs never use the elevator.</strong>
+Check that the Elevator Nav Links component is on the car, that navigation was rebuilt after you added it, that the link ends are on the navigation mesh (check <code>LandingDistance</code>), and that the car is in Normal mode without a fault.</p>
+<p><strong>The NPC waits for ever.</strong>
+The car may not serve the floor or direction. Check <code>ServiceWaitSeconds</code>, <code>BoardStallSeconds</code> and whether someone stands in the door. With <code>BoardStallSeconds</code> at 0 a rider that cannot board waits for ever.</p>
+<p><strong>The NPC stands next to the door.</strong>
+Something stands on the waiting spots or in front of the door. The ride steers straight in the lobby and does not path-find around people. Keep 2 m beside and 3 m in front of the doors free, and have the sample NPC walk away after it arrives.</p>
+<p><strong>The navigation mesh rebuilds while the car moves.</strong>
+Keep <code>bExcludeCabinFromNavigation</code> on.</p>
+<p><strong>The NPC refuses a floor.</strong>
+It is access denied: raise the NPC's <code>DefaultAccessLevel</code> or the task's access level. The failure reads Call Rejected with the reason Access Denied.</p>
+<p><strong>The NPC does not ride to the right floor.</strong>
+Check the destination floor id and that the car serves it (<strong>Get Floors</strong>). Unknown floors fail at once with Invalid Request.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

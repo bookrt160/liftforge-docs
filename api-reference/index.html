@@ -1,0 +1,3695 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bookrt160.github.io/liftforge-docs/api-reference/">
+      
+      
+        <link rel="prev" href="../buttons-and-hooks/">
+      
+      
+        <link rel="next" href="../dispatch/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>API reference - LiftForge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LiftForge Documentation" class="md-header__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiftForge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LiftForge Documentation" class="md-nav__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LiftForge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevator Builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets and visual sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the API fits together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons-and-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help, Phone and Emergency Call buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lftypesh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFTypes.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFTypes.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatortype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfdrive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFDrive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfdoorlayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFDoorLayout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatorstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatormode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elffault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFFault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfdirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFDirection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatorcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorCommand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfcallrejectreason" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFCallRejectReason
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flffloor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFFloor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfaudiopack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFAudioPack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfpartmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFPartMesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfvisualset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFVisualSet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfimportedpartrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFImportedPartRole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfimportedpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFImportedPart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfcabinscreen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFCabinScreen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfelevatorconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFElevatorConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorpreset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorPreset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFRequest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevator.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevator.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfloadcomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFLoadComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfbuttoncomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFButtonComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfpartrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFPartRole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFPart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alfelevator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALFElevator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorbankh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorBank.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorBank.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flfbankcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFBankCall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alfelevatorbank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALFElevatorBank
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorregistryh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorRegistry.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorRegistry.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorRegistry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorinteractorcomponenth-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorInteractorComponent.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorInteractorComponent.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorinteractorcomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorInteractorComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfmoveelevatoractionh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFMoveElevatorAction.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFMoveElevatorAction.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elfmovefailure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFMoveFailure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfmoveelevatortoflooraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFMoveElevatorToFloorAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfoperatorconsoleh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFOperatorConsole.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFOperatorConsole.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alfoperatorconsole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALFOperatorConsole
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfridercomponenth-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFRiderComponent.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFRiderComponent.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfridercomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFRiderComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorsettingsh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorSettings.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorSettings.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dispatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank and destination dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-and-faults/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating modes and faults
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inspection views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../own-character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using your own character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VR setup (OpenXR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../npc-riding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC riding guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-partition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World Partition notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits, licences and AI disclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lftypesh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFTypes.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFTypes.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatortype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfdrive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFDrive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfdoorlayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFDoorLayout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatorstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatormode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elffault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFFault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfdirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFDirection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfelevatorcommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFElevatorCommand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfcallrejectreason" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFCallRejectReason
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flffloor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFFloor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfaudiopack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFAudioPack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfpartmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFPartMesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfvisualset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFVisualSet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfimportedpartrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFImportedPartRole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfimportedpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFImportedPart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfcabinscreen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFCabinScreen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfelevatorconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFElevatorConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorpreset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorPreset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFRequest
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevator.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevator.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfloadcomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFLoadComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfbuttoncomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFButtonComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elfpartrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFPartRole
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flfpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFPart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alfelevator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALFElevator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorbankh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorBank.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorBank.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flfbankcall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FLFBankCall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alfelevatorbank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALFElevatorBank
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorregistryh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorRegistry.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorRegistry.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorRegistry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorinteractorcomponenth-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorInteractorComponent.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorInteractorComponent.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorinteractorcomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorInteractorComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfmoveelevatoractionh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFMoveElevatorAction.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFMoveElevatorAction.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elfmovefailure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELFMoveFailure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ulfmoveelevatortoflooraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFMoveElevatorToFloorAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfoperatorconsoleh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFOperatorConsole.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFOperatorConsole.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alfoperatorconsole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALFOperatorConsole
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfridercomponenth-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFRiderComponent.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFRiderComponent.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfridercomponent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFRiderComponent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfelevatorsettingsh-runtime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFElevatorSettings.h (Runtime module)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFElevatorSettings.h (Runtime module)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulfelevatorsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULFElevatorSettings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-reference">API reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
+<p><em>Generated from the public headers of the Runtime module. Property types are in C++ spelling; the Blueprint display name is in brackets after an enum value.</em></p>
+<p>The tables list the public enums, structs, classes, properties, functions and events of the main Runtime headers, with their Blueprint access and category. Signage (<code>ALFSignage</code>) and the mirror capture (<code>ULFMirrorCaptureComponent</code>) are described in <a href="../presets/">Presets and visual sets</a>, and the AI classes in the <a href="../npc-riding/">NPC riding guide</a>. The Demo and Editor modules (sample pawns, input config, Elevator Builder, asset library) are not part of the frozen API; their Blueprint-visible members also have tooltips. <strong>Not frozen:</strong> <code>FLFPart</code>, <code>ELFPartRole</code> and the structs of <code>LFNetTypes.h</code> are internal data that can change within 1.x.</p>
+<h3 id="lftypesh-runtime-module"><code>LFTypes.h</code> (Runtime module)<a class="headerlink" href="#lftypesh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="elfelevatortype"><code>ELFElevatorType</code><a class="headerlink" href="#elfelevatortype" title="Permanent link">&para;</a></h4>
+<p>The purpose of an elevator: a label for your own logic. Only Panoramic changes the build (glazed cabin material). The Drive picks the machinery and the sound.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Passenger</code> (Passenger)</td>
+<td>Passenger car for people.</td>
+</tr>
+<tr>
+<td><code>Freight</code> (Freight)</td>
+<td>Goods or service car with a high capacity and a plain cabin.</td>
+</tr>
+<tr>
+<td><code>Panoramic</code> (Panoramic)</td>
+<td>Passenger car with glazed walls.</td>
+</tr>
+<tr>
+<td><code>Hydraulic</code> (Hydraulic)</td>
+<td>Low-rise car lifted by a hydraulic ram.</td>
+</tr>
+<tr>
+<td><code>Platform</code> (Platform Lift)</td>
+<td>Open accessibility platform lift.</td>
+</tr>
+<tr>
+<td><code>Cycle</code> (Cycle Lift)</td>
+<td>Compact car sized for bicycles.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfdrive"><code>ELFDrive</code><a class="headerlink" href="#elfdrive" title="Permanent link">&para;</a></h4>
+<p>The machine that moves the car. It decides which machinery is generated and which sound plays while moving.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GearlessTraction</code> (Gearless Traction)</td>
+<td>Traction machine without a gearbox.</td>
+</tr>
+<tr>
+<td><code>GearedTraction</code> (Geared Traction)</td>
+<td>Traction machine with a gearbox.</td>
+</tr>
+<tr>
+<td><code>Hydraulic</code> (Hydraulic)</td>
+<td>Hydraulic pump and ram.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfdoorlayout"><code>ELFDoorLayout</code><a class="headerlink" href="#elfdoorlayout" title="Permanent link">&para;</a></h4>
+<p>How the cabin and landing doors open.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CenterOpening</code> (Center Opening)</td>
+<td>Two leaves that part at the centre.</td>
+</tr>
+<tr>
+<td><code>SideSliding</code> (Side Sliding)</td>
+<td>One leaf that slides to the side.</td>
+</tr>
+<tr>
+<td><code>Telescopic</code> (Telescopic)</td>
+<td>Several overlapping leaves that slide to the side.</td>
+</tr>
+<tr>
+<td><code>Hinged</code> (Hinged)</td>
+<td>One swing leaf on a hinge.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfelevatorstate"><code>ELFElevatorState</code><a class="headerlink" href="#elfelevatorstate" title="Permanent link">&para;</a></h4>
+<p>What the car is doing right now. Read it with Get State or listen to On State Changed.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Idle</code> (Idle)</td>
+<td>Parked or waiting for a call, doors closed.</td>
+</tr>
+<tr>
+<td><code>Opening</code> (Doors Opening)</td>
+<td>The doors are opening.</td>
+</tr>
+<tr>
+<td><code>Open</code> (Doors Open)</td>
+<td>The doors are fully open and the dwell timer runs.</td>
+</tr>
+<tr>
+<td><code>Closing</code> (Doors Closing)</td>
+<td>The doors are closing.</td>
+</tr>
+<tr>
+<td><code>Accelerating</code> (Accelerating)</td>
+<td>Moving: speeding up after departure.</td>
+</tr>
+<tr>
+<td><code>Cruising</code> (Cruising)</td>
+<td>Moving: at full speed.</td>
+</tr>
+<tr>
+<td><code>Decelerating</code> (Decelerating)</td>
+<td>Moving: slowing down towards the target floor.</td>
+</tr>
+<tr>
+<td><code>Leveling</code> (Leveling)</td>
+<td>Moving: the last centimetres of the approach, creeping to the landing level.</td>
+</tr>
+<tr>
+<td><code>Stopped</code> (Stopped)</td>
+<td>Held after a fault was reset or a trip was interrupted. Needs Resume Operation.</td>
+</tr>
+<tr>
+<td><code>Fault</code> (Fault)</td>
+<td>A fault is active. See Get Fault.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfelevatormode"><code>ELFElevatorMode</code><a class="headerlink" href="#elfelevatormode" title="Permanent link">&para;</a></h4>
+<p>The operating mode of a car. Anything other than Normal discards the queued calls.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Normal</code> (Normal)</td>
+<td>Automatic collective control: serves hall and cabin calls.</td>
+</tr>
+<tr>
+<td><code>Independent</code> (Independent)</td>
+<td>Attendant service: serves cabin calls only, hall calls are rejected.</td>
+</tr>
+<tr>
+<td><code>Maintenance</code> (Maintenance)</td>
+<td>Inspection service: no calls, the car moves only with Maintenance Jog.</td>
+</tr>
+<tr>
+<td><code>FireRecall</code> (Fire Recall)</td>
+<td>Fire service phase 1: the car returns to the recall floor and opens its doors there.</td>
+</tr>
+<tr>
+<td><code>OutOfService</code> (Out of Service)</td>
+<td>Out of service: the car stops at the next floor and accepts no calls.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elffault"><code>ELFFault</code><a class="headerlink" href="#elffault" title="Permanent link">&para;</a></h4>
+<p>A fault that can be injected into a car to test how a project reacts.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (None)</td>
+<td>No fault.</td>
+</tr>
+<tr>
+<td><code>DoorJam</code> (Door Jam)</td>
+<td>The doors are jammed and cannot open or close.</td>
+</tr>
+<tr>
+<td><code>PowerLoss</code> (Power Loss)</td>
+<td>Power loss: the car stops and the cabin lights go out.</td>
+</tr>
+<tr>
+<td><code>EmergencyBrake</code> (Emergency Brake)</td>
+<td>The emergency brake dropped.</td>
+</tr>
+<tr>
+<td><code>StuckBetweenFloors</code> (Stuck Between Floors)</td>
+<td>The car stopped between two floors.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfdirection"><code>ELFDirection</code><a class="headerlink" href="#elfdirection" title="Permanent link">&para;</a></h4>
+<p>A travel or call direction.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (None)</td>
+<td>No direction: a cabin call, or a car with nothing to do.</td>
+</tr>
+<tr>
+<td><code>Up</code> (Up)</td>
+<td>Towards higher floors.</td>
+</tr>
+<tr>
+<td><code>Down</code> (Down)</td>
+<td>Towards lower floors.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfelevatorcommand"><code>ELFElevatorCommand</code><a class="headerlink" href="#elfelevatorcommand" title="Permanent link">&para;</a></h4>
+<p>Everything a button, console, panel or Blueprint can ask an elevator to do. Pass one to Execute Elevator Command, the single entry point that the generated buttons, the operator console and the demo panel all use.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (None)</td>
+<td>No command. Unknown button names resolve to this and are ignored.</td>
+</tr>
+<tr>
+<td><code>SelectFloor</code> (Select Floor)</td>
+<td>Cabin call: send the car to Floor Id.</td>
+</tr>
+<tr>
+<td><code>HallCallUp</code> (Hall Call Up)</td>
+<td>Hall call going up from Floor Id. A linked bank picks the car.</td>
+</tr>
+<tr>
+<td><code>HallCallDown</code> (Hall Call Down)</td>
+<td>Hall call going down from Floor Id. A linked bank picks the car.</td>
+</tr>
+<tr>
+<td><code>DestinationCall</code> (Destination Call)</td>
+<td>Destination call from Origin Floor Id to Floor Id. A linked bank picks the car.</td>
+</tr>
+<tr>
+<td><code>OpenDoors</code> (Open Doors)</td>
+<td>Open the doors at the current landing.</td>
+</tr>
+<tr>
+<td><code>CloseDoors</code> (Close Doors)</td>
+<td>Close the doors.</td>
+</tr>
+<tr>
+<td><code>PassengerAlarm</code> (Passenger Alarm)</td>
+<td>Sound the passenger alarm.</td>
+</tr>
+<tr>
+<td><code>EmergencyCall</code> (Emergency Call)</td>
+<td>Emergency call button of the car operating panel. Raises On Command Executed only.</td>
+</tr>
+<tr>
+<td><code>Help</code> (Help)</td>
+<td>Help button of the car operating panel. Raises On Command Executed only.</td>
+</tr>
+<tr>
+<td><code>Phone</code> (Phone)</td>
+<td>Phone button of the car operating panel. Raises On Command Executed only.</td>
+</tr>
+<tr>
+<td><code>ToggleCutaway</code> (Toggle Cutaway)</td>
+<td>Show or hide the cutaway of the shaft wall.</td>
+</tr>
+<tr>
+<td><code>ToggleExploded</code> (Toggle Exploded View)</td>
+<td>Switch the exploded inspection view on or off. Switching it on puts the car into Maintenance.</td>
+</tr>
+<tr>
+<td><code>ToggleLabels</code> (Toggle Part Labels)</td>
+<td>Show or hide the inspection labels of the parts.</td>
+</tr>
+<tr>
+<td><code>ToggleOverload</code> (Toggle Simulated Overload)</td>
+<td>Simulate an overloaded cabin, or clear the simulated load.</td>
+</tr>
+<tr>
+<td><code>ToggleObstruction</code> (Toggle Simulated Obstruction)</td>
+<td>Simulate a blocked door light curtain, or clear it.</td>
+</tr>
+<tr>
+<td><code>ModeNormal</code> (Mode: Normal)</td>
+<td>Set the mode to Normal.</td>
+</tr>
+<tr>
+<td><code>ModeIndependent</code> (Mode: Independent)</td>
+<td>Set the mode to Independent.</td>
+</tr>
+<tr>
+<td><code>ModeMaintenance</code> (Mode: Maintenance)</td>
+<td>Set the mode to Maintenance.</td>
+</tr>
+<tr>
+<td><code>ModeFireRecall</code> (Mode: Fire Recall)</td>
+<td>Set the mode to Fire Recall.</td>
+</tr>
+<tr>
+<td><code>ModeOutOfService</code> (Mode: Out Of Service)</td>
+<td>Set the mode to Out Of Service.</td>
+</tr>
+<tr>
+<td><code>FaultDoorJam</code> (Fault: Door Jam)</td>
+<td>Inject a door jam fault.</td>
+</tr>
+<tr>
+<td><code>FaultPowerLoss</code> (Fault: Power Loss)</td>
+<td>Inject a power loss fault.</td>
+</tr>
+<tr>
+<td><code>FaultEmergencyBrake</code> (Fault: Emergency Brake)</td>
+<td>Inject an emergency brake fault.</td>
+</tr>
+<tr>
+<td><code>FaultStuckBetweenFloors</code> (Fault: Stuck Between Floors)</td>
+<td>Inject a stuck-between-floors fault.</td>
+</tr>
+<tr>
+<td><code>ResetFault</code> (Reset Fault)</td>
+<td>Clear the active fault and hold the car until Resume.</td>
+</tr>
+<tr>
+<td><code>Resume</code> (Resume)</td>
+<td>Release the hold after a reset and recover to the nearest floor.</td>
+</tr>
+<tr>
+<td><code>JogUp</code> (Maintenance Jog Up)</td>
+<td>Maintenance jog to the next floor above.</td>
+</tr>
+<tr>
+<td><code>JogDown</code> (Maintenance Jog Down)</td>
+<td>Maintenance jog to the next floor below.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfcallrejectreason"><code>ELFCallRejectReason</code><a class="headerlink" href="#elfcallrejectreason" title="Permanent link">&para;</a></h4>
+<p>Why a call was not accepted. Reported by On Call Rejected and by Move Elevator To Floor.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (None)</td>
+<td>The call was accepted.</td>
+</tr>
+<tr>
+<td><code>UnknownFloor</code> (Unknown Floor)</td>
+<td>The floor is not served by the car.</td>
+</tr>
+<tr>
+<td><code>SameFloor</code> (Same Floor)</td>
+<td>The origin and the destination of the call are the same floor.</td>
+</tr>
+<tr>
+<td><code>InvalidDirection</code> (Invalid Direction)</td>
+<td>A hall call needs Up or Down, and not Up at the top floor or Down at the bottom floor.</td>
+</tr>
+<tr>
+<td><code>AccessDenied</code> (Access Denied)</td>
+<td>The access level of the caller is below the access level of the floor.</td>
+</tr>
+<tr>
+<td><code>Fault</code> (Fault Active)</td>
+<td>A fault is active.</td>
+</tr>
+<tr>
+<td><code>ResumeRequired</code> (Resume Required)</td>
+<td>A fault was reset and the car waits for Resume Operation.</td>
+</tr>
+<tr>
+<td><code>OutOfService</code> (Out Of Service)</td>
+<td>The car is out of service.</td>
+</tr>
+<tr>
+<td><code>Maintenance</code> (Maintenance Mode)</td>
+<td>The car is in Maintenance mode.</td>
+</tr>
+<tr>
+<td><code>FireRecall</code> (Fire Recall Mode)</td>
+<td>The car is in Fire Recall mode.</td>
+</tr>
+<tr>
+<td><code>IndependentService</code> (Independent Service)</td>
+<td>The car is in Independent mode, which accepts cabin calls only.</td>
+</tr>
+<tr>
+<td><code>InvalidConfiguration</code> (Invalid Configuration)</td>
+<td>The configuration of the car is invalid, so it does not operate.</td>
+</tr>
+<tr>
+<td><code>NoElevatorAvailable</code> (No Elevator Available)</td>
+<td>A bank found no car that can serve the call.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flffloor"><code>FLFFloor</code><a class="headerlink" href="#flffloor" title="Permanent link">&para;</a></h4>
+<p>One landing served by an elevator.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FName Id</code> <br><em>read/write, Elevator</em></td>
+<td>Unique name used by every call and getter to refer to this floor, for example G, L1 or B2.</td>
+</tr>
+<tr>
+<td><code>FString Label</code> <br><em>read/write, Elevator</em></td>
+<td>Text shown on the displays and buttons. Not translated.</td>
+</tr>
+<tr>
+<td><code>double Elevation = 0</code> <br><em>read/write, Elevator</em></td>
+<td>Landing height above the actor origin. Floors must be listed from the lowest to the highest.</td>
+</tr>
+<tr>
+<td><code>bool bFrontEntrance = true</code> <br><em>read/write, Elevator</em></td>
+<td>The landing has an entrance on the front side of the car.</td>
+</tr>
+<tr>
+<td><code>bool bRearEntrance = false</code> <br><em>read/write, Elevator</em></td>
+<td>The landing has an entrance on the rear side of the car (a through car).</td>
+</tr>
+<tr>
+<td><code>int32 AccessLevel = 0</code> <br><em>read/write, Elevator</em></td>
+<td>Minimum access level a caller needs to travel to or from this floor. 0 is open to everyone.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Announcement</code> <br><em>read/write, Elevator</em></td>
+<td>Spoken announcement played on arrival. Optional.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flfaudiopack"><code>FLFAudioPack</code><a class="headerlink" href="#flfaudiopack" title="Permanent link">&para;</a></h4>
+<p>The sounds of an elevator. Any sound may be left empty.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float Volume = 0.35f</code> <br><em>read/write, Elevator|Audio</em></td>
+<td>Master volume of every sound of the car.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Motor</code> <br><em>read/write, Elevator</em></td>
+<td>Traction machine loop, played while the car moves.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; HydraulicPump</code> <br><em>read/write, Elevator</em></td>
+<td>Hydraulic pump loop, played instead of Motor by hydraulic drives.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; DoorMotor</code> <br><em>read/write, Elevator</em></td>
+<td>Door motor loop, played while the doors move.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Brake</code> <br><em>read/write, Elevator</em></td>
+<td>Brake sound, played at departure and arrival.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Latch</code> <br><em>read/write, Elevator</em></td>
+<td>Door latch sound, played when the doors reach closed.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Button</code> <br><em>read/write, Elevator</em></td>
+<td>Button press sound.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Chime</code> <br><em>read/write, Elevator</em></td>
+<td>Arrival chime.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Alarm</code> <br><em>read/write, Elevator</em></td>
+<td>Passenger alarm and fault alarm. Plays once; a looping sound stops only when a fault is reset.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; Overload</code> <br><em>read/write, Elevator</em></td>
+<td>Overload warning, played when the load rises above the capacity.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; DoorsOpening</code> <br><em>read/write, Elevator</em></td>
+<td>Spoken announcement when the doors open. Optional.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundBase&gt; DoorsClosing</code> <br><em>read/write, Elevator</em></td>
+<td>Spoken announcement when the doors close. Optional.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flfpartmesh"><code>FLFPartMesh</code><a class="headerlink" href="#flfpartmesh" title="Permanent link">&para;</a></h4>
+<p>A mesh of a visual set and the nominal size it was authored at.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; Mesh</code> <br><em>read/write, Elevator|Art</em></td>
+<td>The static mesh placed for the part role.</td>
+</tr>
+<tr>
+<td><code>FVector SourceDimensions = FVector(100)</code> <br><em>read/write, Elevator|Art</em></td>
+<td>Size of the mesh as authored. The part is scaled from this to the size the configuration needs.</td>
+</tr>
+<tr>
+<td><code>bool bPreserveMaterialSlots = true</code> <br><em>read/write, Elevator|Art</em></td>
+<td>Keep the material slots of the mesh instead of applying the configuration materials.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;TSoftObjectPtr&lt;UMaterialInterface&gt;&gt; MaterialOverrides</code> <br><em>read/write, Elevator|Art</em></td>
+<td>Materials that replace the slots of the mesh, in slot order.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ulfvisualset"><code>ULFVisualSet</code><a class="headerlink" href="#ulfvisualset" title="Permanent link">&para;</a></h4>
+<p>A set of authored meshes, one per part role. Cars that reference a visual set use it instead of the generated kit.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FString Description</code> <br><em>read/write, Elevator|Art</em></td>
+<td>A short description of the look of the set.</td>
+</tr>
+<tr>
+<td><code>TMap&lt;FName, FLFPartMesh&gt; PartMeshes</code> <br><em>read/write, Elevator|Art</em></td>
+<td>The mesh of each part role, keyed by role name (for example CabinWall or DoorFrame).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfimportedpartrole"><code>ELFImportedPartRole</code><a class="headerlink" href="#elfimportedpartrole" title="Permanent link">&para;</a></h4>
+<p>What a part of an imported assembly is and how it moves.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CabinFloor</code> (Cabin Floor)</td>
+<td>The floor of the cabin, which pawns stand on. An assembly has exactly one.</td>
+</tr>
+<tr>
+<td><code>CabinRigid</code> (Cabin Rigid)</td>
+<td>Any other part that rides with the cabin.</td>
+</tr>
+<tr>
+<td><code>CabinDoor</code> (Cabin Door)</td>
+<td>A leaf of the cabin door.</td>
+</tr>
+<tr>
+<td><code>LandingFixed</code> (Landing Fixed)</td>
+<td>A part that stays at its landing.</td>
+</tr>
+<tr>
+<td><code>LandingDoor</code> (Landing Door)</td>
+<td>A leaf of a landing door.</td>
+</tr>
+<tr>
+<td><code>ShaftFixed</code> (Shaft Fixed)</td>
+<td>A part fixed in the shaft, placed relative to the actor.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flfimportedpart"><code>FLFImportedPart</code><a class="headerlink" href="#flfimportedpart" title="Permanent link">&para;</a></h4>
+<p>One mesh of an imported source assembly, placed instead of the generated kit geometry.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FName Name</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>Unique name of the part within the assembly.</td>
+</tr>
+<tr>
+<td><code>ELFImportedPartRole Role = ELFImportedPartRole::CabinRigid</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>What the part is and how it moves.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; Mesh</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>The static mesh of the part.</td>
+</tr>
+<tr>
+<td><code>FTransform RelativeTransform = FTransform::Identity</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>Transform relative to the cabin datum (cabin roles), the landing floor (landing roles) or the actor (shaft).</td>
+</tr>
+<tr>
+<td><code>FName FloorId</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>Floor the part belongs to. Needed for landing roles.</td>
+</tr>
+<tr>
+<td><code>int32 Leaf = 0</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>Door leaf, 0 or 1. Door roles only.</td>
+</tr>
+<tr>
+<td><code>bool bRear = false</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>The part belongs to the rear entrance.</td>
+</tr>
+<tr>
+<td><code>bool bCollision = true</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>The part blocks pawns. The cabin floor and doors need collision.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;TSoftObjectPtr&lt;UMaterialInterface&gt;&gt; MaterialOverrides</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>Materials that replace the slots of the mesh, in slot order.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfcabinscreen"><code>ELFCabinScreen</code><a class="headerlink" href="#elfcabinscreen" title="Permanent link">&para;</a></h4>
+<p>Where a visual set's cabin advertising screen is placed, if the set has one (roles CabinScreenCorner / CabinScreenWall).</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (None)</td>
+<td>No screen in the car.</td>
+</tr>
+<tr>
+<td><code>Corner</code> (Ceiling Corner)</td>
+<td>A ceiling-corner screen in the front-left corner, facing the passengers.</td>
+</tr>
+<tr>
+<td><code>Wall</code> (Side Wall)</td>
+<td>A portrait panel on the side wall next to the car operating panel.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flfelevatorconfiguration"><code>FLFElevatorConfiguration</code><a class="headerlink" href="#flfelevatorconfiguration" title="Permanent link">&para;</a></h4>
+<p>Everything that describes one elevator: its floors, size, speed, doors, capacity, look and sounds.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FString DisplayName = TEXT("Passenger elevator")</code> <br><em>read/write, Elevator</em></td>
+<td>Name of the elevator, shown on the operator console and panel.</td>
+</tr>
+<tr>
+<td><code>ELFElevatorType Type = ELFElevatorType::Passenger</code> <br><em>read/write, Elevator</em></td>
+<td>Purpose of the elevator.</td>
+</tr>
+<tr>
+<td><code>ELFDrive Drive = ELFDrive::GearlessTraction</code> <br><em>read/write, Elevator</em></td>
+<td>The machine that moves the car.</td>
+</tr>
+<tr>
+<td><code>ELFDoorLayout DoorLayout = ELFDoorLayout::CenterOpening</code> <br><em>read/write, Elevator</em></td>
+<td>How the doors open.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;FLFFloor&gt; Floors</code> <br><em>read/write, Elevator</em></td>
+<td>The landings, listed from the lowest to the highest.</td>
+</tr>
+<tr>
+<td><code>FName InitialFloor = TEXT("G")</code> <br><em>read/write, Elevator</em></td>
+<td>Floor the car starts at.</td>
+</tr>
+<tr>
+<td><code>FName RecallFloor = TEXT("G")</code> <br><em>read/write, Elevator</em></td>
+<td>Floor the car returns to in Fire Recall mode.</td>
+</tr>
+<tr>
+<td><code>float CabinWidth = 220</code> <br><em>read/write, Elevator</em></td>
+<td>Inside width of the cabin.</td>
+</tr>
+<tr>
+<td><code>float CabinDepth = 240</code> <br><em>read/write, Elevator</em></td>
+<td>Inside depth of the cabin.</td>
+</tr>
+<tr>
+<td><code>float CabinHeight = 270</code> <br><em>read/write, Elevator</em></td>
+<td>Inside height of the cabin.</td>
+</tr>
+<tr>
+<td><code>float DoorWidth = 130</code> <br><em>read/write, Elevator</em></td>
+<td>Clear width of the door opening.</td>
+</tr>
+<tr>
+<td><code>float DoorHeight = 225</code> <br><em>read/write, Elevator</em></td>
+<td>Clear height of the door opening.</td>
+</tr>
+<tr>
+<td><code>float MaxSpeed = 160</code> <br><em>read/write, Elevator</em></td>
+<td>Rated speed of the car.</td>
+</tr>
+<tr>
+<td><code>float MaxAcceleration = 80</code> <br><em>read/write, Elevator</em></td>
+<td>Largest acceleration and deceleration of the car.</td>
+</tr>
+<tr>
+<td><code>float MaxJerk = 120</code> <br><em>read/write, Elevator</em></td>
+<td>Largest rate of change of acceleration in cm/s^3 (the engine has no unit for it), which sets how smooth starts and stops feel.</td>
+</tr>
+<tr>
+<td><code>float DoorSeconds = 1.5</code> <br><em>read/write, Elevator</em></td>
+<td>Time the doors take to open or close.</td>
+</tr>
+<tr>
+<td><code>float DwellSeconds = 4</code> <br><em>read/write, Elevator</em></td>
+<td>Time the doors stay open before they close on their own.</td>
+</tr>
+<tr>
+<td><code>float CapacityKg = 1000</code> <br><em>read/write, Elevator</em></td>
+<td>Rated load. The car is overloaded above this and does not travel.</td>
+</tr>
+<tr>
+<td><code>float PassengerMassKg = 75</code> <br><em>read/write, Elevator</em></td>
+<td>Mass counted for each pawn in the cabin.</td>
+</tr>
+<tr>
+<td><code>float StarvationSeconds = 30</code> <br><em>read/write, Elevator|Dispatch</em></td>
+<td>Bounded waiting: a call older than this is served on the next trip, even if collective control would pass it by to serve calls in the current travel direction first.</td>
+</tr>
+<tr>
+<td><code>float DirectionChangePenaltySeconds = 10</code> <br><em>read/write, Elevator|Dispatch</em></td>
+<td>Seconds the arrival estimate adds when a moving car must reverse to serve a hall call (bank dispatch cost).</td>
+</tr>
+<tr>
+<td><code>float DetailDrawDistance = 8000</code> <br><em>read/write, Elevator|Detail</em></td>
+<td>Distance from the camera beyond which the small cabin and shaft details are hidden.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;ULFVisualSet&gt; VisualSet</code> <br><em>read/write, Elevator|Art</em></td>
+<td>Authored look. Empty builds the elevator from the generated kit.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; CabinMaterial</code> <br><em>read/write, Elevator</em></td>
+<td>Cabin wall material of the generated kit. Empty uses the project default.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; DoorMaterial</code> <br><em>read/write, Elevator</em></td>
+<td>Door material of the generated kit. Empty uses the project default.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; FloorMaterial</code> <br><em>read/write, Elevator</em></td>
+<td>Cabin floor material of the generated kit. Empty uses the project default.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; MachineryMaterial</code> <br><em>read/write, Elevator</em></td>
+<td>Machinery material of the generated kit. Empty uses the project default.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; ShaftMaterial</code> <br><em>read/write, Elevator</em></td>
+<td>Hoistway wall material. Empty uses the project default; a glass material makes a glazed shaft (panoramic lift on an atrium face).</td>
+</tr>
+<tr>
+<td><code>bool bMirrorCapture = false</code> <br><em>read/write, Elevator|Art</em></td>
+<td>A real reflection on the rear wall's mirror panel (slot M_HQ_Mirror): a scene capture from the viewer's reflected position, sampled per world point by the mirror material. Software Lumen shows the stainless doors black in a mirror; this renders the mirror view for real while a viewer stands in front of it. Needs the project setting "Support global clip plane for Planar Reflections". Off by default; the mirrored presets of the showcase turn it on.</td>
+</tr>
+<tr>
+<td><code>ELFCabinScreen CabinScreen = ELFCabinScreen::None</code> <br><em>read/write, Elevator|Art</em></td>
+<td>Cabin advertising screen placed from the visual set (roles CabinScreenCorner / CabinScreenWall). None places no screen.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UTexture&gt; CabinScreenImage</code> <br><em>read/write, Elevator|Art</em></td>
+<td>Picture shown on the cabin screen (any texture, for example a T_LF_Screen_* sample). Empty keeps the screen material's own image.</td>
+</tr>
+<tr>
+<td><code>float LandingWallOffset = 0</code> <br><em>read/write, Elevator</em></td>
+<td>Distance from the landing door plane to the finished face of the landing wall in front of it. The hall station, hall lanterns, landing indicators and displays are mounted on that face. 0 (the 1.0 layout) mounts them on the door plane itself; a wall 6 cm in front of the doors hides the open leaves and gives the door frame a 4 cm reveal.</td>
+</tr>
+<tr>
+<td><code>float CabinLightTemperature = 4000</code> <br><em>read/write, Elevator|Lighting</em></td>
+<td>Colour temperature of the cabin point light and the two ceiling fill lights. 4000 K (the default) is the 1.0 look.</td>
+</tr>
+<tr>
+<td><code>bool bCabinLightShadows = false</code> <br><em>read/write, Elevator|Lighting</em></td>
+<td>Lets the cabin lights cast shadows. Off by default: three shadow-casting lights per car cost frame time.</td>
+</tr>
+<tr>
+<td><code>FString Provenance = TEXT("Original authored visualization; dimensions are configurable assumptions.")</code> <br><em>read/write, Elevator</em></td>
+<td>Free text that records where the data of this configuration comes from.</td>
+</tr>
+<tr>
+<td><code>FString BrandText</code> <br><em>read/write, Elevator|Display</em></td>
+<td>Optional brand line printed on the cabin panel. Empty (the default) prints nothing.</td>
+</tr>
+<tr>
+<td><code>FLFAudioPack Audio</code> <br><em>read/write, Elevator</em></td>
+<td>Sounds of the elevator.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ulfelevatorpreset"><code>ULFElevatorPreset</code><a class="headerlink" href="#ulfelevatorpreset" title="Permanent link">&para;</a></h4>
+<p>A data asset that stores one elevator configuration, so many cars can share it.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FLFElevatorConfiguration Configuration</code> <br><em>read/write, Elevator</em></td>
+<td>The configuration that cars using this preset operate with.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flfrequest"><code>FLFRequest</code><a class="headerlink" href="#flfrequest" title="Permanent link">&para;</a></h4>
+<p>A registered call: a hall call (Direction Up or Down) or a cabin call (bCabin, Direction None).</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FName FloorId</code> <br><em>read only, Elevator</em></td>
+<td>Floor the call goes to (cabin call) or is made from (hall call).</td>
+</tr>
+<tr>
+<td><code>ELFDirection Direction = ELFDirection::None</code> <br><em>read only, Elevator</em></td>
+<td>Direction of a hall call. None for a cabin call.</td>
+</tr>
+<tr>
+<td><code>bool bCabin = false</code> <br><em>read only, Elevator</em></td>
+<td>True for a cabin call made from inside the car.</td>
+</tr>
+<tr>
+<td><code>double AcceptedAt = 0</code> <br><em>read only, Elevator</em></td>
+<td>Simulation time at which the call was accepted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfelevatorh-runtime-module"><code>LFElevator.h</code> (Runtime module)<a class="headerlink" href="#lfelevatorh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="ulfloadcomponent"><code>ULFLoadComponent</code><a class="headerlink" href="#ulfloadcomponent" title="Permanent link">&para;</a></h4>
+<p>Add to an actor to give it a mass in the cabin. Without it a pawn weighs the car's passenger mass.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float LoadKg = 75</code> <br><em>read/write, Elevator</em></td>
+<td>Mass this actor adds to the car load while it stands in the cabin.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ulfbuttoncomponent"><code>ULFButtonComponent</code><a class="headerlink" href="#ulfbuttoncomponent" title="Permanent link">&para;</a></h4>
+<p>A pressable button. Press it with Press Button, or let a pawn point at it and use Trace Button to find it. The button runs its Command through its Elevator (or Bank), the same path Blueprints use.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TObjectPtr&lt;ALFElevator&gt; Elevator</code> <br><em>read/write, Elevator</em></td>
+<td>The elevator the button controls.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;ALFElevatorBank&gt; Bank</code> <br><em>read/write, Elevator</em></td>
+<td>Bank that dispatches hall and destination calls of this button. Empty uses the bank of the elevator.</td>
+</tr>
+<tr>
+<td><code>FName FloorId</code> <br><em>read/write, Elevator</em></td>
+<td>Floor the button selects, calls from or goes to.</td>
+</tr>
+<tr>
+<td><code>FName OriginFloorId</code> <br><em>read/write, Elevator</em></td>
+<td>Floor a destination call starts from.</td>
+</tr>
+<tr>
+<td><code>FName Command = TEXT("Select")</code> <br><em>read/write, Elevator</em></td>
+<td>Button name of the command: Select, Up, Down, Destination, Open, Close, Alarm and so on. Use Set Command Type to pick a command from the enum instead of typing a name; an unknown name does nothing.</td>
+</tr>
+<tr>
+<td><code>FString Caption</code> <br><em>read/write, Elevator</em></td>
+<td>Text drawn on the button.</td>
+</tr>
+<tr>
+<td><code>ELFElevatorCommand GetCommandType() const</code> <br><em>pure, Elevator|Interaction</em></td>
+<td>The command of this button as an enum. None when Command holds an unknown name.</td>
+</tr>
+<tr>
+<td><code>void SetCommandType(ELFElevatorCommand NewCommand)</code> <br><em>callable, Elevator|Interaction</em></td>
+<td>Sets Command from the enum, so a typo in a button name is not possible.</td>
+</tr>
+<tr>
+<td><code>bool PressButton(int32 AccessLevel = 0)</code> <br><em>callable, Elevator|Interaction</em></td>
+<td>Presses the button: runs its command through Execute Elevator Command and plays the press animation and sound. Returns true when a call was accepted or a service command ran.</td>
+</tr>
+<tr>
+<td><code>static ULFButtonComponent* TraceButton(const UObject* WorldContextObject, const FVector&amp; Start, const FVector&amp; Direction, AActor* Ignore = nullptr, double Distance = 450)</code> <br><em>callable, Elevator|Interaction</em></td>
+<td>Finds the button in front of a pawn: a visibility trace from Start along Direction that returns the button it hits, or null. The desktop, VR and HUD pickers of the demo use it.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="elfpartrole"><code>ELFPartRole</code><a class="headerlink" href="#elfpartrole" title="Permanent link">&para;</a></h4>
+<p>How a generated or imported part animates. Parts that never move after a build are Fixed.</p>
+<h4 id="flfpart"><code>FLFPart</code><a class="headerlink" href="#flfpart" title="Permanent link">&para;</a></h4>
+<p>One generated or imported mesh of an assembly and the data AnimateParts needs to move it.</p>
+<h4 id="alfelevator"><code>ALFElevator</code><a class="headerlink" href="#alfelevator" title="Permanent link">&para;</a></h4>
+<p>One elevator: a car, its doors, buttons, displays, machinery and shaft, built from a preset or a configuration and operated by collective control. Every way to operate it goes through two entry points: Execute Elevator Command (doors, floors, modes, faults, inspection views) and Call To Floor (a trip between two floors). The generated buttons, the operator console, the demo panel and your own Blueprints all use them. Multiplayer: the server runs the car and replicates a compact state; clients rebuild the motion, doors, displays, sounds and events from it. On a client every command function is sent to the server through the local player's ULFElevatorInteractorComponent, and returns true when it was sent.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TObjectPtr&lt;ULFElevatorPreset&gt; Preset</code> <br><em>read/write, Elevator|Configuration</em></td>
+<td>Data asset that holds the configuration of this car. Used unless Use Configuration Override is on. Replicated: a change on the server rebuilds the car on every client.</td>
+</tr>
+<tr>
+<td><code>FLFElevatorConfiguration Configuration</code> <br><em>read/write, Elevator|Configuration</em></td>
+<td>The configuration of this car, used when there is no preset or when Use Configuration Override is on. Replicated.</td>
+</tr>
+<tr>
+<td><code>bool bUseConfigurationOverride = false</code> <br><em>read/write, Elevator|Configuration</em></td>
+<td>Use Configuration instead of the preset, so one car can differ from its preset. Replicated.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;FLFImportedPart&gt; ImportedParts</code> <br><em>read/write, Elevator|Imported Assembly</em></td>
+<td>When non-empty, RebuildAssembly places these source meshes instead of the generated kit geometry. ValidateConfiguration checks them alongside the configuration. Call MarkConfigurationDirty() or RebuildAssembly() after changing this from gameplay code. Replicated.</td>
+</tr>
+<tr>
+<td><code>FName ElevatorId = TEXT("A")</code> <br><em>read/write, Elevator|Identity</em></td>
+<td>Short name of the car within its bank, for example A or B. Also used to break ties between cars. Replicated.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;ALFElevatorBank&gt; DispatchBank</code> <br><em>read/write, Elevator|Identity</em></td>
+<td>Bank that dispatches this car's hall calls. The bank lists the car as a member automatically. With World Partition prefer BankName (no hard actor reference). Replicated.</td>
+</tr>
+<tr>
+<td><code>FName BankName</code> <br><em>read/write, Elevator|Identity</em></td>
+<td>Name of the bank this car belongs to. Cars and banks with the same BankName find each other at runtime through the world's LiftForge registry, so they can live in different World Partition cells. Empty: only DispatchBank and the bank's Elevators list link them. Replicated.</td>
+</tr>
+<tr>
+<td><code>bool bCutaway = true</code> <br><em>read/write, Elevator|Inspection</em></td>
+<td>Hide the shaft wall on the side of the viewer so the car can be seen travelling.</td>
+</tr>
+<tr>
+<td><code>bool bShowPartLabels = false</code> <br><em>read/write, Elevator|Inspection</em></td>
+<td>Show a text label on every part.</td>
+</tr>
+<tr>
+<td><code>float ExplodedAmount = 0</code> <br><em>read/write, Elevator|Inspection</em></td>
+<td>How far the parts are moved apart for the exploded inspection view: 0 assembled, 1 fully exploded.</td>
+</tr>
+<tr>
+<td><code>bool bShaftCollision = true</code> <br><em>read/write, Elevator|Collision</em></td>
+<td>Invisible blocking walls around the hoistway, open only at the landing entrances, so players cannot walk into the shaft or fall into the pit. They block pawns and physics bodies only. Replicated.</td>
+</tr>
+<tr>
+<td><code>bool bStaticFixedParts = false</code> <br><em>read/write, Elevator|Performance</em></td>
+<td>Build the parts that never move (shaft, rails, frames, sills, machine room) with Static mobility. Cheaper to render, but the actor's root becomes Static, so the elevator cannot be moved at runtime, and projects with static lighting report these parts as unbuilt until lighting is built. The exploded view switches them to Movable when it is used. Replicated.</td>
+</tr>
+<tr>
+<td><code>float SimulatedLoadKg = 0</code> <br><em>read/write, Elevator|Load</em></td>
+<td>Extra load added to what stands in the cabin, to test the overload behaviour without a pawn.</td>
+</tr>
+<tr>
+<td><code>bool bSimulatedObstruction = false</code> <br><em>read/write, Elevator|Sensors</em></td>
+<td>Treat the door light curtain as blocked, to test the door reversal without a pawn.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;USceneComponent&gt; CabinRoot</code> <br><em>read only, Elevator|Components</em></td>
+<td>Root of everything that rides with the car.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;UBoxComponent&gt; CabinSensor</code> <br><em>read only, Elevator|Components</em></td>
+<td>Volume that weighs what stands in the cabin.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;UBoxComponent&gt; DoorSensor</code> <br><em>read only, Elevator|Components</em></td>
+<td>Light curtain of the front door.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;UBoxComponent&gt; RearDoorSensor</code> <br><em>read only, Elevator|Components</em></td>
+<td>Light curtain of the rear door.</td>
+</tr>
+<tr>
+<td><code>FLFFloorEvent OnArrival</code> <br><em>event, Elevator|Events</em></td>
+<td>The car stopped level at a floor. Raised before the doors start to open.</td>
+</tr>
+<tr>
+<td><code>FLFFloorEvent OnDeparture</code> <br><em>event, Elevator|Events</em></td>
+<td>The car left a floor.</td>
+</tr>
+<tr>
+<td><code>FLFStateEvent OnStateChanged</code> <br><em>event, Elevator|Events</em></td>
+<td>The state of the car changed.</td>
+</tr>
+<tr>
+<td><code>FLFModeEvent OnModeChanged</code> <br><em>event, Elevator|Events</em></td>
+<td>The operating mode changed.</td>
+</tr>
+<tr>
+<td><code>FLFFaultEvent OnFaultChanged</code> <br><em>event, Elevator|Events</em></td>
+<td>A fault started or was reset.</td>
+</tr>
+<tr>
+<td><code>FLFDoorEvent OnDoorsChanged</code> <br><em>event, Elevator|Events</em></td>
+<td>The doors reached fully open (Open true) or fully closed (Open false).</td>
+</tr>
+<tr>
+<td><code>FLFFloorEvent OnDoorsOpening</code> <br><em>event, Elevator|Events|Doors</em></td>
+<td>The doors started to open at a floor.</td>
+</tr>
+<tr>
+<td><code>FLFFloorEvent OnDoorsOpened</code> <br><em>event, Elevator|Events|Doors</em></td>
+<td>The doors are fully open at a floor. Passengers can board.</td>
+</tr>
+<tr>
+<td><code>FLFFloorEvent OnDoorsClosing</code> <br><em>event, Elevator|Events|Doors</em></td>
+<td>The doors started to close.</td>
+</tr>
+<tr>
+<td><code>FLFFloorEvent OnDoorsClosed</code> <br><em>event, Elevator|Events|Doors</em></td>
+<td>The doors are fully closed.</td>
+</tr>
+<tr>
+<td><code>FLFCallRejectedEvent OnCallRejected</code> <br><em>event, Elevator|Events</em></td>
+<td>A call was refused. The reason says why. A bank raises its own event when it finds no car.</td>
+</tr>
+<tr>
+<td><code>FLFOverloadEvent OnOverloadChanged</code> <br><em>event, Elevator|Events</em></td>
+<td>The load rose above the capacity (true) or fell back below it (false).</td>
+</tr>
+<tr>
+<td><code>FLFObstructionEvent OnObstructionChanged</code> <br><em>event, Elevator|Events</em></td>
+<td>The door light curtain became blocked (true) or free (false).</td>
+</tr>
+<tr>
+<td><code>FLFPassengerEvent OnPassengerEntered</code> <br><em>event, Elevator|Events</em></td>
+<td>An actor that adds load (a pawn, an actor with a load component or a physics body) entered the cabin.</td>
+</tr>
+<tr>
+<td><code>FLFPassengerEvent OnPassengerExited</code> <br><em>event, Elevator|Events</em></td>
+<td>An actor left the cabin. Not raised for an actor that was destroyed inside the cabin.</td>
+</tr>
+<tr>
+<td><code>FLFCommandEvent OnCommandExecuted</code> <br><em>event, Elevator|Events</em></td>
+<td>A command ran through Execute Elevator Command. Also the way to react to the Help, Phone and Emergency Call buttons.</td>
+</tr>
+<tr>
+<td><code>bool ExecuteElevatorCommand(ELFElevatorCommand Command, FName FloorId = NAME_None, int32 AccessLevel = 0, FName OriginFloorId = NAME_None, ALFElevatorBank* BankOverride = nullptr)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Runs one command. This is the single entry point for the generated buttons, the operator console, the demo panel and Blueprints. Floor Id is the floor of a call; Origin Floor Id is the floor a destination call starts from. Hall and destination calls go through the bank of the car (or Bank Override) when there is one. Returns true when a call was accepted or a service command ran.</td>
+</tr>
+<tr>
+<td><code>bool CallToFloor(FName FloorId, FName OriginFloorId = NAME_None, int32 AccessLevel = 0)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Books a trip for a passenger waiting at Origin Floor Id who wants to go to Floor Id on this car. The car is called to Origin Floor Id and, when its doors are open there, Floor Id is selected. Leave Origin Floor Id empty (or at the floor the car stands at with open doors) to just select Floor Id. With a bank use Request Destination of the bank to let the bank pick the car. Returns false, and raises On Call Rejected, when the call is not accepted.</td>
+</tr>
+<tr>
+<td><code>bool SelectFloor(FName FloorId, int32 AccessLevel = 0)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Cabin call: send the car to a floor. Returns false and raises On Call Rejected when it is not accepted.</td>
+</tr>
+<tr>
+<td><code>bool RequestHallCall(FName FloorId, ELFDirection Direction, int32 AccessLevel = 0)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Hall call: ask the car to come to a floor to travel in a direction. Does not use the bank; see Execute Elevator Command.</td>
+</tr>
+<tr>
+<td><code>bool RequestDoorOpen()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Opens the doors at a landing. Rejected while moving, between floors, during any fault, while the car is held after a reset (until Resume Operation) and out of service, except during the one door cycle that lets passengers out at the stop after Out of Service was entered while moving.</td>
+</tr>
+<tr>
+<td><code>bool RequestDoorClose()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Closes the doors. Rejected while moving, faulted, overloaded or when the light curtain is blocked.</td>
+</tr>
+<tr>
+<td><code>void SetOperatingMode(ELFElevatorMode NewMode)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Changes the operating mode. Maintenance and OutOfService entered while moving decelerate the car to the next floor it can stop at. In Maintenance the doors stay shut there (Door Open still opens them). Out of Service opens them once so passengers can get out, closes them after the dwell, then refuses calls and Door Open. FireRecall does the same when the car moves away from the recall floor, then returns it there.</td>
+</tr>
+<tr>
+<td><code>void InjectFault(ELFFault NewFault)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Starts a fault. Discards the queued calls and stops the car. Fault None resets the fault.</td>
+</tr>
+<tr>
+<td><code>void ResetFault()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Clears an active fault and holds the car (Stopped) until ResumeOperation. Does nothing without a fault.</td>
+</tr>
+<tr>
+<td><code>bool ResumeOperation()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Releases the hold after a reset. At a floor the car carries on; between floors it travels to the nearest floor.</td>
+</tr>
+<tr>
+<td><code>bool MaintenanceJog(int32 Direction)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Maintenance mode only, doors closed: moves the car to the next floor up (1) or down (-1). The doors open at the end of the jog, the only Maintenance stop where they open on their own.</td>
+</tr>
+<tr>
+<td><code>void ToggleOverload()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Adds or removes a simulated load one passenger above the capacity.</td>
+</tr>
+<tr>
+<td><code>void ToggleCutaway()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Shows or hides the cutaway of the shaft wall.</td>
+</tr>
+<tr>
+<td><code>void ToggleExploded()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Switches the exploded inspection view on or off. Switching it on puts the car into Maintenance.</td>
+</tr>
+<tr>
+<td><code>void ToggleLabels()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Shows or hides the part labels.</td>
+</tr>
+<tr>
+<td><code>void PlayAlarm()</code> <br><em>callable, Elevator|Audio</em></td>
+<td>Sounds the passenger alarm.</td>
+</tr>
+<tr>
+<td><code>void PlayButtonSound()</code> <br><em>callable, Elevator|Audio</em></td>
+<td>Plays the button press sound.</td>
+</tr>
+<tr>
+<td><code>void RebuildAssembly()</code> <br><em>callable, Elevator|Builder</em></td>
+<td>Rebuilds the geometry from the current configuration. In play, a rebuild requested while the car moves runs when it arrives; the cabin floor component is kept, so riders stay based on it.</td>
+</tr>
+<tr>
+<td><code>bool ValidateConfiguration(TArray&lt;FString&gt;&amp; Errors) const</code> <br><em>callable, Elevator|Builder</em></td>
+<td>Checks the configuration. Returns false and lists the problems in Errors. An invalid car does not operate.</td>
+</tr>
+<tr>
+<td><code>void PreviewDoors()</code> <br><em>callable, Elevator|Builder</em></td>
+<td>Opens or closes the doors in the editor, to preview the doors without playing.</td>
+</tr>
+<tr>
+<td><code>void MarkConfigurationDirty()</code> <br><em>callable, Elevator|Builder</em></td>
+<td>Re-validate the configuration before the next tick. RebuildAssembly, construction, BeginPlay and editor property edits already do this; call it after changing Configuration, Preset or ImportedParts from gameplay code without rebuilding. Calls to floors that no longer exist are dropped and the docked floor is matched again by ID.</td>
+</tr>
+<tr>
+<td><code>FLFElevatorConfiguration GetConfiguration() const</code> <br><em>pure, Elevator</em></td>
+<td>A copy of the active configuration (the preset's, or Configuration when overridden).</td>
+</tr>
+<tr>
+<td><code>TArray&lt;FLFFloor&gt; GetFloors() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The floors of the car, from the lowest to the highest.</td>
+</tr>
+<tr>
+<td><code>int32 GetFloorIndex(FName FloorId) const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The position of a floor in Get Floors, or -1 when the car does not serve it.</td>
+</tr>
+<tr>
+<td><code>ELFElevatorState GetState() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>What the car is doing now.</td>
+</tr>
+<tr>
+<td><code>ELFElevatorMode GetOperatingMode() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The operating mode.</td>
+</tr>
+<tr>
+<td><code>ELFFault GetFault() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The active fault, or None.</td>
+</tr>
+<tr>
+<td><code>float GetDoorFraction() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>How far the doors are open: 0 closed, 1 fully open.</td>
+</tr>
+<tr>
+<td><code>double GetCarElevation() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>Height of the cabin floor above the actor origin.</td>
+</tr>
+<tr>
+<td><code>double GetCarVelocity() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>Signed speed of the car: positive going up, negative going down.</td>
+</tr>
+<tr>
+<td><code>FName GetCurrentFloor() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The floor the car is level with, or None while it travels or is between floors.</td>
+</tr>
+<tr>
+<td><code>bool IsMoving() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>True while the car accelerates, cruises, decelerates or levels.</td>
+</tr>
+<tr>
+<td><code>FName GetTargetFloor() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The floor the current trip ends at. None while the car is not moving.</td>
+</tr>
+<tr>
+<td><code>ELFDirection GetTravelDirection() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The direction the car travels or will travel next. None when it has nothing to do.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;FLFRequest&gt; GetRequests() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The calls the car has accepted and not yet served.</td>
+</tr>
+<tr>
+<td><code>bool IsOverloaded() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>True while the load is above the capacity.</td>
+</tr>
+<tr>
+<td><code>bool IsDoorObstructed() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>True while the door light curtain is blocked.</td>
+</tr>
+<tr>
+<td><code>float GetLoadKg() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>Current load of the cabin, including the simulated load.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;AActor*&gt; GetOccupants() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The actors currently counted as passengers or cargo of the cabin.</td>
+</tr>
+<tr>
+<td><code>bool CanServeFloor(FName FloorId, int32 AccessLevel = 0) const</code> <br><em>pure, Elevator|Status</em></td>
+<td>True when the car serves the floor and the access level is high enough for it.</td>
+</tr>
+<tr>
+<td><code>double EstimateArrivalSeconds(FName FloorId, ELFDirection Direction) const</code> <br><em>pure, Elevator|Status</em></td>
+<td>Estimated seconds until the car could serve a hall call. Very large when it cannot (mode, fault, overload).</td>
+</tr>
+<tr>
+<td><code>FString GetStatusText() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>A one-line description of the car for debugging and the operator panel. Not translated.</td>
+</tr>
+<tr>
+<td><code>ELFCallRejectReason GetLastCallRejection() const</code> <br><em>pure, Elevator|Status</em></td>
+<td>The reason the last call was refused, or None when it was accepted.</td>
+</tr>
+<tr>
+<td><code>ALFElevatorBank* GetDispatchBank() const</code> <br><em>pure, Elevator</em></td>
+<td>The bank that dispatches this car: DispatchBank, or the registered bank named BankName.</td>
+</tr>
+<tr>
+<td><code>UPrimitiveComponent* GetCabinFloor() const</code> <br><em>pure, Elevator|Components</em></td>
+<td>The floor collision of the cabin, which pawns stand on. Null before the car is built.</td>
+</tr>
+<tr>
+<td><code>bool IsNetworkProxy() const</code> <br><em>pure, Elevator|Network</em></td>
+<td>True on a network client: this car is a copy of the server's car. It shows the server's state, and its command functions send the request to the server (through the local player's interactor) instead of changing the car. False on the server, in single player and for cars that do not replicate.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfelevatorbankh-runtime-module"><code>LFElevatorBank.h</code> (Runtime module)<a class="headerlink" href="#lfelevatorbankh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="flfbankcall"><code>FLFBankCall</code><a class="headerlink" href="#flfbankcall" title="Permanent link">&para;</a></h4>
+<p>A call the bank has assigned to a car, kept until the car serves it.</p>
+<h4 id="alfelevatorbank"><code>ALFElevatorBank</code><a class="headerlink" href="#alfelevatorbank" title="Permanent link">&para;</a></h4>
+<p>Dispatches hall and destination calls to a group of cars. A car belongs to a bank when the bank lists it, when the car names the bank in Dispatch Bank, when its Bank Name matches, or after Register Elevator. Membership is two-way: a car that names a bank is listed by it, and a bank that lists a car becomes the car's Dispatch Bank, so hall buttons always reach the bank. Multiplayer: the bank dispatches on the server only. On a client, Request Hall Call and Request Destination send the call to the server (through the local player's interactor) and return null; the requesting client then hears On Assigned or On Call Rejected for its own call.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TArray&lt;TObjectPtr&lt;ALFElevator&gt;&gt; Elevators</code> <br><em>read/write, Elevator Bank</em></td>
+<td>Cars dispatched by this bank. With World Partition prefer BankName (no hard actor references).</td>
+</tr>
+<tr>
+<td><code>FName BankName</code> <br><em>read/write, Elevator Bank</em></td>
+<td>Cars whose BankName matches also belong to this bank. They are found at runtime through the world's LiftForge registry as they stream in, so bank and cars can live in different cells.</td>
+</tr>
+<tr>
+<td><code>float DestinationGroupingBonusSeconds = 15</code> <br><em>read/write, Elevator Bank</em></td>
+<td>Seconds taken off a car's estimate when it already carries a call with the same origin and destination.</td>
+</tr>
+<tr>
+<td><code>FLFAssignmentEvent OnAssigned</code> <br><em>event, Elevator Bank|Events</em></td>
+<td>A call was assigned to a car.</td>
+</tr>
+<tr>
+<td><code>FLFBankRejectedEvent OnCallRejected</code> <br><em>event, Elevator Bank|Events</em></td>
+<td>A call could not be placed. The reason says why (no car, access, unknown floor, or the reason the chosen car gave).</td>
+</tr>
+<tr>
+<td><code>ALFElevator* RequestHallCall(FName OriginFloorId, ELFDirection Direction, int32 AccessLevel = 0)</code> <br><em>callable, Elevator Bank</em></td>
+<td>Hall call: a passenger at Origin Floor Id wants to go in a direction. The bank picks the car with the shortest estimate and returns it, or returns null and raises On Call Rejected.</td>
+</tr>
+<tr>
+<td><code>ALFElevator* RequestDestination(FName OriginFloorId, FName DestinationFloorId, int32 AccessLevel = 0)</code> <br><em>callable, Elevator Bank</em></td>
+<td>Destination call: a passenger at Origin Floor Id wants to go to Destination Floor Id. The bank picks the car, calls it to the origin and selects the destination when its doors open there. Returns the car, or null and raises On Call Rejected.</td>
+</tr>
+<tr>
+<td><code>bool RegisterElevator(ALFElevator* Elevator)</code> <br><em>callable, Elevator Bank</em></td>
+<td>Adds a car to the bank and makes the bank the car's Dispatch Bank. Returns false when the car belongs to another bank.</td>
+</tr>
+<tr>
+<td><code>bool UnregisterElevator(ALFElevator* Elevator)</code> <br><em>callable, Elevator Bank</em></td>
+<td>Removes a car from the bank and clears its Dispatch Bank. Returns false when the car was not a member.</td>
+</tr>
+<tr>
+<td><code>bool ValidateBank(TArray&lt;FString&gt;&amp; Errors) const</code> <br><em>callable, Elevator Bank</em></td>
+<td>Checks the bank: it has cars, no car belongs to another bank, no two cars share an id, and every car shares a floor with another car. Returns false and lists the problems in Errors.</td>
+</tr>
+<tr>
+<td><code>FString GetLastAssignment() const</code> <br><em>pure, Elevator Bank</em></td>
+<td>Text of the last assignment, for status displays. Not translated.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;ALFElevator*&gt; GetMembers() const</code> <br><em>pure, Elevator Bank</em></td>
+<td>The loaded cars of this bank: listed, registered, naming this bank in Dispatch Bank or matching Bank Name.</td>
+</tr>
+<tr>
+<td><code>bool IsNetworkProxy() const</code> <br><em>pure, Elevator Bank|Network</em></td>
+<td>True on a network client: this bank is a copy of the server's bank and sends its calls to the server.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfelevatorregistryh-runtime-module"><code>LFElevatorRegistry.h</code> (Runtime module)<a class="headerlink" href="#lfelevatorregistryh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="ulfelevatorregistry"><code>ULFElevatorRegistry</code><a class="headerlink" href="#ulfelevatorregistry" title="Permanent link">&para;</a></h4>
+<p>Tracks the elevators and banks that have begun play in a world. Cars and banks register in BeginPlay and unregister in EndPlay, so with World Partition they appear and disappear as their cells stream. Cars and banks that share a BankName find each other here without hard actor references, which would otherwise force them into the same cell. In multiplayer it also keeps the clock that clients run the replicated cars on, and on the server gives every player an interactor (see ULFElevatorInteractorComponent).</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TArray&lt;ALFElevator*&gt; GetElevators() const</code> <br><em>pure, Elevator</em></td>
+<td>Every registered elevator.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;ALFElevator*&gt; GetBankMembers(FName BankName) const</code> <br><em>pure, Elevator</em></td>
+<td>Registered elevators whose BankName matches. Empty for NAME_None.</td>
+</tr>
+<tr>
+<td><code>ALFElevatorBank* FindBank(FName BankName) const</code> <br><em>pure, Elevator</em></td>
+<td>The registered bank with this BankName, or null.</td>
+</tr>
+<tr>
+<td><code>TArray&lt;ALFElevatorBank*&gt; GetBanks() const</code> <br><em>pure, Elevator</em></td>
+<td>Every registered bank.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfelevatorinteractorcomponenth-runtime-module"><code>LFElevatorInteractorComponent.h</code> (Runtime module)<a class="headerlink" href="#lfelevatorinteractorcomponenth-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="ulfelevatorinteractorcomponent"><code>ULFElevatorInteractorComponent</code><a class="headerlink" href="#ulfelevatorinteractorcomponent" title="Permanent link">&para;</a></h4>
+<p>Sends a player's elevator requests (buttons, the operator console, UI commands, destination input) to the server in multiplayer. The server checks every request and uses its own Access Level for it; the client never decides that. You rarely call it yourself: on a client, Execute Elevator Command, Call To Floor, the command functions of ALFElevator, the bank's Request Hall Call and Request Destination and Press Button all route through the local player's interactor. LiftForge adds one to every player controller on the server (Project Settings &gt; LiftForge &gt; Multiplayer), or add it to your PlayerController or pawn. Call its functions directly for split-screen, where several local players share one machine.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int32 AccessLevel = 0</code> <br><em>read/write, Elevator|Network</em></td>
+<td>Highest access level the server grants this player. Set it on the server (for example in the game mode's Post Login); a request uses the lower of this and the level the caller asked for. Replicated to the owning client for display.</td>
+</tr>
+<tr>
+<td><code>bool bAllowServiceCommands = false</code> <br><em>read/write, Elevator|Network</em></td>
+<td>Lets this player run service commands: modes, faults, reset, resume, jog, inspection views and the simulated load and obstruction. Off (the default): only calls, doors, alarm and the help buttons. Checked on the server. Turn it on only for players who may stop or fault a car.</td>
+</tr>
+<tr>
+<td><code>float MaxRequestDistance = 0</code> <br><em>read/write, Elevator|Network</em></td>
+<td>The server refuses requests for a car (or bank) farther than this from the player's pawn. 0 turns the check off. The distance is measured to the bounds of the car and its shaft.</td>
+</tr>
+<tr>
+<td><code>int32 MaxRequestsPerSecond = 20</code> <br><em>read/write, Elevator|Network</em></td>
+<td>Requests per second the server accepts from this player; extra ones are dropped with a warning.</td>
+</tr>
+<tr>
+<td><code>FLFRequestCompletedEvent OnRequestCompleted</code> <br><em>event, Elevator|Network</em></td>
+<td>The server has handled a request of this player. Raised on the owning client (and on a listen server for its host).</td>
+</tr>
+<tr>
+<td><code>bool ExecuteElevatorCommand(ALFElevator* Elevator, ELFElevatorCommand Command, FName FloorId = NAME_None, int32 RequestedAccessLevel = 0, FName OriginFloorId = NAME_None, ALFElevatorBank* BankOverride = nullptr)</code> <br><em>callable, Elevator|Network</em></td>
+<td>Runs Execute Elevator Command on Elevator for this player: at once on the server, otherwise by sending it to the server. Returns the result on the server, and true when the request was sent on a client.</td>
+</tr>
+<tr>
+<td><code>bool CallToFloor(ALFElevator* Elevator, FName FloorId, FName OriginFloorId = NAME_None, int32 RequestedAccessLevel = 0)</code> <br><em>callable, Elevator|Network</em></td>
+<td>Runs Call To Floor on Elevator for this player (see Execute Elevator Command for the return value).</td>
+</tr>
+<tr>
+<td><code>bool RequestHallCall(ALFElevatorBank* Bank, FName OriginFloorId, ELFDirection Direction, int32 RequestedAccessLevel = 0)</code> <br><em>callable, Elevator|Network</em></td>
+<td>Places a hall call on Bank for this player (see Execute Elevator Command for the return value).</td>
+</tr>
+<tr>
+<td><code>bool RequestDestination(ALFElevatorBank* Bank, FName OriginFloorId, FName DestinationFloorId, int32 RequestedAccessLevel = 0)</code> <br><em>callable, Elevator|Network</em></td>
+<td>Places a destination call on Bank for this player (see Execute Elevator Command for the return value).</td>
+</tr>
+<tr>
+<td><code>bool PressButton(ULFButtonComponent* Button, int32 RequestedAccessLevel = 0)</code> <br><em>callable, Elevator|Network</em></td>
+<td>Presses Button for this player: the press animation and sound play here, the command runs on the server.</td>
+</tr>
+<tr>
+<td><code>bool CanRunRequest(ALFElevator* Elevator, ALFElevatorBank* Bank, ELFElevatorCommand Command, FName FloorId) const</code> <br><em>, Elevator|Network</em></td>
+<td>Server only: decides whether this player may run a request, after the access, service and distance checks passed. Override it to add your own rules. Returning false refuses the request with Access Denied.</td>
+</tr>
+<tr>
+<td><code>static ULFElevatorInteractorComponent* FindLocalInteractor(const UObject* WorldContextObject)</code> <br><em>pure, Elevator|Network</em></td>
+<td>The interactor that requests of the first local player go through: on its player controller or its pawn. Null if none.</td>
+</tr>
+<tr>
+<td><code>static ULFElevatorInteractorComponent* FindOrAddInteractor(APlayerController* Controller)</code> <br><em>callable, Elevator|Network</em></td>
+<td>Server: the interactor of a player controller, adding one if it has none. LiftForge calls this for every player when elevators are in a networked world; call it yourself to set Access Level early.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfmoveelevatoractionh-runtime-module"><code>LFMoveElevatorAction.h</code> (Runtime module)<a class="headerlink" href="#lfmoveelevatoractionh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="elfmovefailure"><code>ELFMoveFailure</code><a class="headerlink" href="#elfmovefailure" title="Permanent link">&para;</a></h4>
+<p>Why Move Elevator To Floor did not arrive.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (None)</td>
+<td>No failure.</td>
+</tr>
+<tr>
+<td><code>CallRejected</code> (Call Rejected)</td>
+<td>The call was rejected. Reject Reason says why.</td>
+</tr>
+<tr>
+<td><code>Fault</code> (Fault)</td>
+<td>A fault started before the car arrived.</td>
+</tr>
+<tr>
+<td><code>ModeChanged</code> (Mode Changed)</td>
+<td>The operating mode changed, which discards the queued calls.</td>
+</tr>
+<tr>
+<td><code>ElevatorDestroyed</code> (Elevator Destroyed)</td>
+<td>The elevator was destroyed or its level was unloaded.</td>
+</tr>
+<tr>
+<td><code>TimedOut</code> (Timed Out)</td>
+<td>The timeout ran out.</td>
+</tr>
+<tr>
+<td><code>Cancelled</code> (Cancelled)</td>
+<td>The action was cancelled.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ulfmoveelevatortoflooraction"><code>ULFMoveElevatorToFloorAction</code><a class="headerlink" href="#ulfmoveelevatortoflooraction" title="Permanent link">&para;</a></h4>
+<p>Latent Blueprint node that sends a car to a floor and waits. Arrived fires when the car is level with the floor and its doors are fully open. Failed fires when the call is rejected, a fault starts, the mode changes, the elevator is destroyed or the timeout runs out. Exactly one of the two fires, once.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FLFMoveArrivedEvent Arrived</code> <br><em>event, Elevator|Commands</em></td>
+<td>Fires when the car has arrived at the floor with the doors open.</td>
+</tr>
+<tr>
+<td><code>FLFMoveFailedEvent Failed</code> <br><em>event, Elevator|Commands</em></td>
+<td>Fires when the trip failed.</td>
+</tr>
+<tr>
+<td><code>static ULFMoveElevatorToFloorAction* MoveElevatorToFloor(const UObject* WorldContextObject, ALFElevator* Elevator, FName FloorId, FName OriginFloorId = NAME_None, int32 AccessLevel = 0, float TimeoutSeconds = 0)</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Sends the elevator to Floor Id and waits until it arrives with the doors open. With Origin Floor Id the car first collects a passenger there (see Call To Floor); leave it empty for a cabin call. Timeout Seconds of 0 waits for ever.</td>
+</tr>
+<tr>
+<td><code>void Cancel()</code> <br><em>callable, Elevator|Commands</em></td>
+<td>Stops waiting. Failed fires with Cancelled. Does nothing after the action has finished.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfoperatorconsoleh-runtime-module"><code>LFOperatorConsole.h</code> (Runtime module)<a class="headerlink" href="#lfoperatorconsoleh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="alfoperatorconsole"><code>ALFOperatorConsole</code><a class="headerlink" href="#alfoperatorconsole" title="Permanent link">&para;</a></h4>
+<p>In-world service console: a wall of physical buttons for one elevator (modes, faults, recovery, inspection views) plus a floor or destination keypad, and a status line. It is built from engine components and ULFButtonComponent only, so it stays in LiftForgeRuntime and works with any pawn that presses buttons.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TObjectPtr&lt;ALFElevator&gt; Elevator</code> <br><em>read/write, Elevator</em></td>
+<td>Elevator the console operates.</td>
+</tr>
+<tr>
+<td><code>TObjectPtr&lt;ALFElevatorBank&gt; Bank</code> <br><em>read/write, Elevator</em></td>
+<td>Optional bank: when set, the keypad places destination calls through it.</td>
+</tr>
+<tr>
+<td><code>FName OriginFloorId = TEXT("G")</code> <br><em>read/write, Elevator</em></td>
+<td>Floor the console stands on; the origin of destination calls.</td>
+</tr>
+<tr>
+<td><code>void RebuildConsole()</code> <br><em>callable, Elevator</em></td>
+<td>Rebuilds the buttons and captions of the console from the elevator, bank and floors.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfridercomponenth-runtime-module"><code>LFRiderComponent.h</code> (Runtime module)<a class="headerlink" href="#lfridercomponenth-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="ulfridercomponent"><code>ULFRiderComponent</code><a class="headerlink" href="#ulfridercomponent" title="Permanent link">&para;</a></h4>
+<p>Carries its owner with a moving elevator cabin floor. Add it to pawns that do not use CharacterMovement (for example a VR pawn); characters ride on their movement base already. It needs no input, VR or UI module, so it stays in LiftForgeRuntime.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float FloorProbeDistance = 120</code> <br><em>read/write, Elevator</em></td>
+<td>How far below the owner's origin to look for a cabin floor.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lfelevatorsettingsh-runtime-module"><code>LFElevatorSettings.h</code> (Runtime module)<a class="headerlink" href="#lfelevatorsettingsh-runtime-module" title="Permanent link">&para;</a></h3>
+<h4 id="ulfelevatorsettings"><code>ULFElevatorSettings</code><a class="headerlink" href="#ulfelevatorsettings" title="Permanent link">&para;</a></h4>
+<p>Project-wide LiftForge defaults, shown under Project Settings &gt; Plugins &gt; LiftForge. Every asset the runtime uses without a preset or visual set pointing at it is listed here as a soft reference: the generated kit's meshes and materials, the panel LED materials, the elevator sound attenuation and the sound mix. The plugin ships the values in Config/DefaultLiftForge.ini. The cooker treats soft references read from config as dependencies, so these assets are packaged without any DirectoriesToAlwaysCook entry in the host project. Projects can point any entry at their own asset; the change is saved to the project's Config/DefaultLiftForge.ini.</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; BoxMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Generic box used for walls, frames, rails, the cabin floor and most fixed kit parts.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; CylinderMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Generic cylinder used for round kit parts such as ropes, the hydraulic barrel and the ram.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; DoorPanelMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Cabin and landing door leaf.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; SheaveMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Traction sheave, motor face and overspeed governor.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; MotorHousingMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Traction machine housing.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; BrakeMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Machine brake and car safety gear.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; PumpMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Hydraulic power unit.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UStaticMesh&gt; PanelMesh</code> <br><em>editor only, Kit Meshes</em></td>
+<td>Car operating panel and operator console button plate.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; CabinMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Cabin walls of the generated kit when the configuration sets no cabin material.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; GlassMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Cabin walls of panoramic cars when the configuration sets no cabin material.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; StoneMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Cabin floor when the configuration sets no floor material.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; SteelMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Rails, handrails, frames and doors when the configuration sets no door material.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; MachineMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Machinery when the configuration sets no machinery material.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; RubberMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Panels, ropes, sheave tread and the car-top service mat.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; BronzeMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Governor, brake, safety gear and door locks.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; LightMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Cabin and shaft light fittings.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; ShaftMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Hoistway walls.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; ButtonMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Kit push buttons and operator console buttons.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; ConsoleMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Operator console body.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; MirrorCaptureMaterial</code> <br><em>editor only, Kit Materials</em></td>
+<td>Master of the cabin mirror capture (M_LF_MirrorCapture), used when a configuration turns Mirror Capture on.</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; WhiteLEDMaterial</code> <br><em>editor only, Displays</em></td>
+<td>Ring of a car operating panel floor button that is idle (visual-set cars).</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;UMaterialInterface&gt; AmberLEDMaterial</code> <br><em>editor only, Displays</em></td>
+<td>Ring of a floor button that is registered or matches the docked floor (visual-set cars).</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundAttenuation&gt; SoundAttenuation</code> <br><em>editor only, Audio</em></td>
+<td>Attenuation used by the elevator one-shot sounds (brake, chime, buttons, overload).</td>
+</tr>
+<tr>
+<td><code>TSoftObjectPtr&lt;USoundMix&gt; SoundMix</code> <br><em>editor only, Audio</em></td>
+<td>Sound mix pushed as a modifier while at least one elevator is playing.</td>
+</tr>
+<tr>
+<td><code>bool bApplySoundMix = true</code> <br><em>editor only, Audio</em></td>
+<td>Push SoundMix while elevators play. The mix is reference counted by the audio device: each elevator pushes it in BeginPlay and pops it in EndPlay. Turn off to manage mixes yourself.</td>
+</tr>
+<tr>
+<td><code>float IdleTickInterval = 0.1f</code> <br><em>editor only, Performance</em></td>
+<td>Tick interval of a parked elevator with no calls, doors closed and nothing to announce. Any call, door command, mode change or fault switches it back to every frame. 0 ticks every frame.</td>
+</tr>
+<tr>
+<td><code>bool bAutoAddInteractor = true</code> <br><em>editor only, Multiplayer</em></td>
+<td>In a networked game, the server adds a ULFElevatorInteractorComponent to every player controller once the world has LiftForge elevators, so clients can use buttons, consoles and panels without setup. Turn off to add the component yourself (to your PlayerController or pawn).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

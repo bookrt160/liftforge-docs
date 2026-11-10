@@ -1,0 +1,1366 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bookrt160.github.io/liftforge-docs/multiplayer/">
+      
+      
+        <link rel="prev" href="../vr/">
+      
+      
+        <link rel="next" href="../npc-riding/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Multiplayer guide - LiftForge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#multiplayer-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LiftForge Documentation" class="md-header__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LiftForge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multiplayer guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LiftForge Documentation" class="md-nav__button md-logo" aria-label="LiftForge Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LiftForge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevator Builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presets and visual sets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blueprint API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blueprint API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the API fits together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons-and-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help, Phone and Emergency Call buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dispatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank and destination dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes-and-faults/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating modes and faults
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inspection views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../own-character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using your own character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VR setup (OpenXR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-replicated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is replicated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-a-multiplayer-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set up a multiplayer project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-calling-and-operating-cars-from-a-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Calling and operating cars from a client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Calling and operating cars from a client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-interactor-component-and-access-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The interactor component and access levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-riding-in-multiplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Riding in multiplayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-late-joiners-and-relevancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Late joiners and relevancy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inspection-views-over-the-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Inspection views over the network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-events-and-the-data-that-stays-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Events and the data that stays local
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-test-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Test checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-known-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Known limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../npc-riding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC riding guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-partition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World Partition notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits, licences and AI disclosure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-replicated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is replicated
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-a-multiplayer-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set up a multiplayer project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-calling-and-operating-cars-from-a-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Calling and operating cars from a client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Calling and operating cars from a client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-interactor-component-and-access-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The interactor component and access levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-riding-in-multiplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Riding in multiplayer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-late-joiners-and-relevancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Late joiners and relevancy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inspection-views-over-the-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Inspection views over the network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-events-and-the-data-that-stays-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Events and the data that stays local
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-test-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Test checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-known-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Known limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="multiplayer-guide">Multiplayer guide<a class="headerlink" href="#multiplayer-guide" title="Permanent link">&para;</a></h1>
+<p>LiftForge cars are <strong>server-authoritative</strong>. The server runs the state machine, and every client shows the same car, doors, displays and sounds. This page covers setup, what clients can do, how riding works over a network, and what to check when something looks wrong.</p>
+<h2 id="1-what-is-replicated">1. What is replicated<a class="headerlink" href="#1-what-is-replicated" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The car's state.</strong> The server writes a compact state: state, mode, fault, docked and target floor, the motion profile with its server start time, the door fraction and time of the last door change, lit calls, load, light curtain, the reset latch and the inspection views. The position is <strong>not</strong> sent every frame: clients rebuild the motion and the doors from that state and the server clock, so a car moves smoothly between updates.</li>
+<li><strong>Events, in the server's order.</strong> The server also sends a ring of its last 32 discrete events (state, mode, fault, arrival, departure, overload, obstruction, alarm). A client replays them in order, so even when several events arrive in one update, handlers see the documented order (see <a href="../api/">Blueprint API</a>) and the sounds, chimes and announcements play on every client. After a lost packet a client <strong>waits for the resend</strong> instead of skipping an event.</li>
+<li><strong>Configuration.</strong> <code>Preset</code>, <code>Configuration</code>, <code>bUseConfigurationOverride</code>, <code>ImportedParts</code>, <code>bShaftCollision</code>, <code>bStaticFixedParts</code>, <code>ElevatorId</code>, <code>BankName</code> and <code>DispatchBank</code> replicate. A change on the server rebuilds the car on every client (after the trip, if the car is moving). A car <strong>spawned at runtime by the server</strong> therefore also exists on clients.</li>
+<li><strong>The bank.</strong> It replicates, so a bank spawned at runtime exists on clients, but it <strong>dispatches on the server only</strong>.</li>
+</ul>
+<p>A car replicates by default (<code>bReplicates</code>). A car with replication turned off keeps the single-player behaviour on every machine.</p>
+<h2 id="2-set-up-a-multiplayer-project">2. Set up a multiplayer project<a class="headerlink" href="#2-set-up-a-multiplayer-project" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Save the map before you test.</strong> A map that was never saved ("Untitled") cannot replicate level actors by name, so clients cannot find the cars. Save the level first, then use Play In Editor with several players.</li>
+<li><strong>Nothing else is required on the elevator or the bank.</strong> There is no checkbox to tick: cars replicate and the server dispatches.</li>
+<li><strong>Players need the interactor component.</strong> The server adds a <code>LFElevatorInteractorComponent</code> to every player controller once a networked world has LiftForge cars. This is the setting <code>bAutoAddInteractor</code> in the LiftForge settings, on by default. If you prefer, add the component to your PlayerController or pawn yourself and turn the setting off.</li>
+<li><strong>Set each player's access level</strong> in your game mode's <strong>Post Login</strong> (see section 3). The demo game mode gives every player level 9 and allows service commands.</li>
+<li>For a custom character, apply the settings in <a href="../own-character/#multiplayer-settings">Using your own character</a>.</li>
+</ol>
+<p>The demo game mode of the example maps already does steps 3 and 4. A VR pawn works for single player and for the listen host; for multiplayer VR, use a Character-based pawn (section 4).</p>
+<h2 id="3-calling-and-operating-cars-from-a-client">3. Calling and operating cars from a client<a class="headerlink" href="#3-calling-and-operating-cars-from-a-client" title="Permanent link">&para;</a></h2>
+<p>On a client, every command is <strong>sent to the server</strong> instead of changing the local copy. This covers <strong>Execute Elevator Command</strong>, <strong>Call To Floor</strong>, <strong>Select Floor</strong>, <strong>Request Hall Call</strong>, <strong>Request Door Open / Close</strong>, <strong>Set Operating Mode</strong>, <strong>Inject Fault</strong>, <strong>Reset Fault</strong>, <strong>Resume Operation</strong>, <strong>Maintenance Jog</strong>, the <code>Toggle...</code> functions, the bank's <strong>Request Hall Call</strong> and <strong>Request Destination</strong>, and <strong>Press Button</strong>. You use the same nodes as in single player.</p>
+<ul>
+<li><strong>Return values.</strong> On a client the return value of these functions means "sent", not "accepted". The bank functions return null there.</li>
+<li><strong>Answer events.</strong> The player who sent the request hears the answer on its own copy of the car: <strong>On Command Executed</strong>, or <strong>On Call Rejected</strong> when the server refused it. For a bank request, <strong>On Assigned</strong> or the bank's <strong>On Call Rejected</strong>. <strong>Move Elevator To Floor</strong> also works on clients; a refusal arrives as an event.</li>
+<li><strong>Instant feedback.</strong> The button press animation and sound play at once on the client. <code>Play Alarm</code> and <code>Play Button Sound</code> stay local sounds.</li>
+</ul>
+<h3 id="the-interactor-component-and-access-levels">The interactor component and access levels<a class="headerlink" href="#the-interactor-component-and-access-levels" title="Permanent link">&para;</a></h3>
+<p><code>LFElevatorInteractorComponent</code> lives on the player. It sends the request and the server decides, with these checks:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AccessLevel</code></td>
+<td>The server uses the <strong>lower</strong> of this level and the level the caller asked for. A client can lower its level, never raise it.</td>
+</tr>
+<tr>
+<td><code>bAllowServiceCommands</code></td>
+<td>Off (the default): only calls, doors, the alarm and the help buttons are accepted.</td>
+</tr>
+<tr>
+<td><code>MaxRequestDistance</code></td>
+<td>How near the player must be to the car and its shaft. 0, the default, turns the distance check off.</td>
+</tr>
+<tr>
+<td><code>MaxRequestsPerSecond</code></td>
+<td>Flood guard, 20 by default.</td>
+</tr>
+<tr>
+<td><code>CanRunRequest</code></td>
+<td>An overridable function for your own rules.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Service commands are off by default.</strong> A player can make calls, work the doors and press the alarm and help buttons. Modes, faults, reset, resume, jog, the inspection views and the simulated load and obstruction are refused until you set <code>bAllowServiceCommands</code> to true on that player's interactor. Turn it on only for players who may stop or fault a car. The demo game mode turns it on for every player.</p>
+</blockquote>
+<p>Set <code>AccessLevel</code> in your game mode's Post Login. The component also has <strong>Execute Elevator Command</strong>, <strong>Call To Floor</strong>, <strong>Request Hall Call</strong>, <strong>Request Destination</strong> and <strong>Press Button</strong>, which you can call directly (for example for split-screen), plus <strong>Find Local Interactor</strong>, <strong>Find Or Add Interactor</strong> and the event <strong>On Request Completed</strong>.</p>
+<h2 id="4-riding-in-multiplayer">4. Riding in multiplayer<a class="headerlink" href="#4-riding-in-multiplayer" title="Permanent link">&para;</a></h2>
+<p>Characters ride as they do in single player: the cabin floor is their movement base. LiftForge gives the cabin floor and the sills the <strong>same name on the server and on every client</strong> and makes them network-addressable, so CharacterMovement can send them as the base. Your character needs a few settings, listed in <a href="../own-character/#multiplayer-settings">Using your own character</a>. The one that matters most is <strong><code>bStayBasedInAir = true</code></strong> on the CharacterMovement component.</p>
+<p>Tested results with a listen server and with a dedicated server, 2 clients each, 50 ms each way (100 ms round trip) and 1 % packet loss each way, on UE 5.6, 5.7 and 5.8:</p>
+<ul>
+<li>The car's height on a client differed from the server's by <strong>at most 0.027 cm</strong> at the same server time in normal runs; one run of 15 measured 1.3 cm during a server frame hitch.</li>
+<li>A rider standing in the car showed steady height above the floor and a largest frame-to-frame step of 0.010 cm. No fall-through: the lowest point after a jump landing was above the floor.</li>
+<li>A jump inside a moving car reached the same height as in a still room.</li>
+<li>Riding, crouching and walking in and out produced almost no corrections. Under packet loss, a jump in a moving car can cause a correction.</li>
+<li>A car moving at 5 m/s was tested with a jump at speed.</li>
+</ul>
+<p>These numbers come from the automated tests on the author's PC, with 2 clients in one editor process; your network will differ. Multiplayer has not been tested over a real network or by human players.</p>
+<h2 id="5-late-joiners-and-relevancy">5. Late joiners and relevancy<a class="headerlink" href="#5-late-joiners-and-relevancy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The car is <strong>always relevant</strong>: it exists on every client regardless of distance, and it sends no per-frame position, so tall shafts need no relevancy tuning.</li>
+<li>A client that joins mid-trip takes the <strong>current state</strong> as it is: it sees the car where it is, moving, with the right displays and mode. It does <strong>not</strong> replay old events (no old chimes). It raises only the mode, state and fault events for values that differ from the defaults.</li>
+<li>The first state is applied once the client's network clock is valid, so a late joiner does not see a jump.</li>
+<li>A client that reconnects while a car travels was tested.</li>
+</ul>
+<h2 id="6-inspection-views-over-the-network">6. Inspection views over the network<a class="headerlink" href="#6-inspection-views-over-the-network" title="Permanent link">&para;</a></h2>
+<p>Cutaway, part labels and the exploded view are <strong>shared</strong>: they go through the server and change for every player. On a client they are service commands, so that player needs <code>bAllowServiceCommands</code> (section 3). The exploded view also puts the car in Maintenance mode, which only the server can do. Setting the cutaway, labels or exploded amount directly on a client's copy is a <strong>local override</strong> that lasts until the server changes that view.</p>
+<h2 id="7-events-and-the-data-that-stays-local">7. Events and the data that stays local<a class="headerlink" href="#7-events-and-the-data-that-stays-local" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Elevator events fire on clients too.</strong> Every machine raises the elevator events (departure, the moving phases, arrival, door phases, mode, fault, overload, obstruction, alarm) for every car, in the server's order. Logic that must run once, such as <strong>NPC and gameplay logic, scoring, spawning</strong>, must check <strong>Has Authority</strong> first, or it will run once per machine.</li>
+<li><strong>Stays local per machine:</strong> <strong>Occupants</strong>, <strong>On Passenger Entered / Exited</strong> (each machine sees who stands in its own cabin).</li>
+<li><strong>Per request:</strong> the requesting client raises <strong>On Command Executed</strong> and <strong>On Call Rejected</strong> on its own copy when the answer comes back.</li>
+<li><strong>Getters.</strong> <strong>Is Network Proxy</strong> (on the car and on the bank) is true on a client copy. On a client, <strong>Get Current Floor</strong> ignores the short visual blend the client applies after a correction.</li>
+</ul>
+<h2 id="8-test-checklist">8. Test checklist<a class="headerlink" href="#8-test-checklist" title="Permanent link">&para;</a></h2>
+<p>Run these with <strong>Play &gt; Advanced Settings &gt; Multiplayer Options</strong>: first <strong>Play As Listen Server</strong> with 3 players, then <strong>Play As Client</strong> with 2 players (a dedicated server). Turn on <strong>Run Under One Process</strong>, and <strong>Network Emulation</strong> for everyone with a custom profile of 50 ms each way and 1 % packet loss. Save the map first. Tick everything in both rounds.</p>
+<ul>
+<li>Hall call from a client: the car comes on every screen at the same time, and chimes play near the car on every client.</li>
+<li>Cabin call from a rider: the button animates at once, the LED lights on every screen, the car leaves after the doors close.</li>
+<li>Destination call at a console: the bank assigns a car and the status shows it.</li>
+<li>A floor above the player's access level: the press animates, no LED lights, the car does not go.</li>
+<li>Two clients call the same car at once: both calls are served.</li>
+<li>Ride up and down, with two players watching each other: no shaking, no sinking, level arrival.</li>
+<li>Jump while the car accelerates, cruises and brakes: you land on the floor, no snap back.</li>
+<li>Crouch while riding. Sprint out as the doors open.</li>
+<li>Fault while a car carries a rider: the car stops at the same height on every screen, the alarm sounds, the rider stays on the floor. Reset, then Resume.</li>
+<li>Fire recall while a car travels away: it stops at the next floor with the doors shut, returns and opens.</li>
+<li>Maintenance with a jog; out of service while moving.</li>
+<li>Overload toggle; stand in the doorway; passenger alarm.</li>
+<li>Cutaway, exploded view, labels from a client: every screen changes.</li>
+<li>Join a new client mid-trip, during a fault, and during a fire recall.</li>
+<li>A client disconnects while riding.</li>
+<li>Logs: no <code>LogLiftForge</code> errors, no "has no LFElevatorInteractorComponent" warning, and no warnings about unresolved or unmapped elevator components.</li>
+</ul>
+<p><code>p.NetShowCorrections 1</code> in a client console shows every movement correction; there should be almost none.</p>
+<h2 id="9-known-limits">9. Known limits<a class="headerlink" href="#9-known-limits" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Not tested over a real network</strong> or by human players (section 4).</li>
+<li><strong>Server and Client build targets were not compiled.</strong> The launcher engine cannot build them, so dedicated-server behaviour was tested in the editor only.</li>
+<li><strong>Server only for commands that change a car.</strong> Clients send requests; the server decides. A client cannot raise its own access level.</li>
+<li><strong>VR pawn.</strong> The demo VR pawn is single player and listen host only, and it has not been tested on a real VR headset; its VR switch needs authority. For multiplayer VR, use a Character-based pawn.</li>
+<li><strong>Occupants</strong> and passenger events are local per machine.</li>
+<li><strong>Never-saved maps</strong> cannot replicate level actors.</li>
+<li><strong>Remote crouch on a moving car under packet loss.</strong> The crouch flag of a character replicates apart from its movement. If the packet with the flag is lost, another player's character riding a moving car shows its new height with the old capsule until the resend: a pop of up to the crouch height difference (about 28 cm with the default capsule) for about one round trip. This is how Unreal replicates crouch for other players' characters, not LiftForge, and it corrects itself.</li>
+<li><strong>Corrections right after you teleport a player</strong> into or out of a car are expected.</li>
+<li>Pawns without CharacterMovement ride through <code>LFRiderComponent</code>, which carries the pawn on each machine but does <strong>not</strong> replicate its movement.</li>
+</ul>
+<h2 id="10-troubleshooting">10. Troubleshooting<a class="headerlink" href="#10-troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>I press a button on a client and nothing happens.</strong>
+Check that the world has cars when the player joined (the interactor is added by the server), that <code>bAutoAddInteractor</code> is on or you added the component, and the player's access level. The log warns when a player has no interactor component.</p>
+<p><strong>Clients cannot name the car, or the car does not appear.</strong>
+You played in an unsaved map. Save the level and try again.</p>
+<p><strong>Jitter or snapping on clients while riding.</strong>
+Check that the character has <code>bStayBasedInAir</code> on, that you did not move the car to a later tick group or drive it from a Timeline, and that you do not change <code>MaxWalkSpeed</code> on the server and the client independently (for sprint, use the usual custom move flag).</p>
+<p><strong>Another player pops up and down by about 28 cm when crouching in a moving car.</strong>
+See the known limits: with packet loss, Unreal shows the new height before the capsule until the crouch flag is resent. It corrects itself after about one round trip.</p>
+<p><strong>A client falls through the floor when jumping in a moving car.</strong>
+Turn on <code>bStayBasedInAir</code> on the CharacterMovement component. See <a href="../own-character/#multiplayer-settings">Using your own character</a>.</p>
+<p><strong>My game logic runs several times when a door opens.</strong>
+The door events fire on every machine now. Check <strong>Has Authority</strong> before gameplay logic.</p>
+<p><strong>An NPC rides on the server but I do not see it on a client.</strong>
+NPC riding runs on the server only. Clients see NPCs through normal Character replication. See the <a href="../npc-riding/">NPC riding guide</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1119,6 +1119,8 @@ No. It is a visualisation and simulation of behaviour, not a certified control s
 Save the map first: a level that was never saved cannot replicate level actors. Then check the player's interactor component and access level. See the <a href="../multiplayer/">Multiplayer guide</a>.</p>
 <p><strong>Another player's character pops by the crouch height in a moving car (multiplayer).</strong>
 With packet loss, Unreal's character movement can show a remote player's crouch height before the capsule changes, for about one round trip. It corrects itself. See <a href="../multiplayer/#9-known-limits">Multiplayer guide</a>.</p>
+<p><strong>Another player's position jumps a little in multiplayer, or a multiplayer test fails once.</strong>
+Under packet loss, Unreal's character movement can correct a player's position: about 7 cm when jumping, and in rare cases up to about 50 cm when sprinting fast. This is engine behaviour; LiftForge does not change it. The test <code>LiftForge.Network.PIE.ListenServer</code> runs at 1 % emulated loss and can fail about 1 run in 10 for this reason. Run it once more before you report a bug. See <a href="../multiplayer/#9-known-limits">Multiplayer guide</a>.</p>
 <p><strong>My game logic runs once per player when a door opens.</strong>
 Elevator events now fire on clients too. Check <strong>Has Authority</strong> before gameplay or NPC logic.</p>
 <p><strong>NPCs do not ride.</strong>

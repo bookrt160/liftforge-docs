@@ -1233,7 +1233,7 @@
 <li>The car's height on a client differed from the server's by <strong>at most 0.027 cm</strong> at the same server time in normal runs; one run of 15 measured 1.3 cm during a server frame hitch.</li>
 <li>A rider standing in the car showed steady height above the floor and a largest frame-to-frame step of 0.010 cm. No fall-through: the lowest point after a jump landing was above the floor.</li>
 <li>A jump inside a moving car reached the same height as in a still room.</li>
-<li>Riding, crouching and walking in and out produced almost no corrections. Under packet loss, a jump in a moving car can cause a correction.</li>
+<li>Riding, crouching and walking in and out produced almost no corrections. Under packet loss, Unreal's character movement can correct a player's position: about 7 cm when jumping, and in rare cases up to about 50 cm when sprinting fast. This is engine behaviour; LiftForge does not change it. In the same test setup, a jump gave a correction of 6.5 to 6.7 cm (4 times in 90 runs), and sprinting at 6 m/s gave corrections of 8 to 54 cm (5 times in 140 runs).</li>
 <li>A car moving at 5 m/s was tested with a jump at speed.</li>
 </ul>
 <p>These numbers come from the automated tests on the author's PC, with 2 clients in one editor process; your network will differ. Multiplayer has not been tested over a real network or by human players.</p>
@@ -1273,7 +1273,8 @@
 <li>A client disconnects while riding.</li>
 <li>Logs: no <code>LogLiftForge</code> errors, no "has no LFElevatorInteractorComponent" warning, and no warnings about unresolved or unmapped elevator components.</li>
 </ul>
-<p><code>p.NetShowCorrections 1</code> in a client console shows every movement correction; there should be almost none.</p>
+<p><code>p.NetShowCorrections 1</code> in a client console shows every movement correction; there should be almost none. Under packet loss, expect a few (see section 9).</p>
+<p><strong>Automation test under packet loss.</strong> <code>LiftForge.Network.PIE.ListenServer</code> runs with 1 % emulated packet loss. For the reason above it can fail about 1 run in 10. If it fails, run it once more before you report a bug. The failures are movement corrections of more than 5 cm, not a fault in the elevator.</p>
 <h2 id="9-known-limits">9. Known limits<a class="headerlink" href="#9-known-limits" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Not tested over a real network</strong> or by human players (section 4).</li>
@@ -1283,6 +1284,7 @@
 <li><strong>Occupants</strong> and passenger events are local per machine.</li>
 <li><strong>Never-saved maps</strong> cannot replicate level actors.</li>
 <li><strong>Remote crouch on a moving car under packet loss.</strong> The crouch flag of a character replicates apart from its movement. If the packet with the flag is lost, another player's character riding a moving car shows its new height with the old capsule until the resend: a pop of up to the crouch height difference (about 28 cm with the default capsule) for about one round trip. This is how Unreal replicates crouch for other players' characters, not LiftForge, and it corrects itself.</li>
+<li><strong>Movement corrections under packet loss.</strong> Under packet loss, Unreal's character movement can correct a player's position: about 7 cm when jumping, and in rare cases up to about 50 cm when sprinting fast. This is engine behaviour; LiftForge does not change it.</li>
 <li><strong>Corrections right after you teleport a player</strong> into or out of a car are expected.</li>
 <li>Pawns without CharacterMovement ride through <code>LFRiderComponent</code>, which carries the pawn on each machine but does <strong>not</strong> replicate its movement.</li>
 </ul>

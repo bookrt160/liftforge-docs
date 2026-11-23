@@ -1219,6 +1219,7 @@
 <li>All presets use a 1.5 s door cycle.</li>
 <li>The Platform speed is illustrative.</li>
 <li>The MRL presets show a machine-room-less drive: the gearless machine sits on the rail tops and the controller is a cabinet beside the top landing door.</li>
+<li>On the Platform and Cycle lifts, the landing gate opens into the car; keep the gate area clear. An outward-opening gate is planned for a later update.</li>
 </ul>
 <p>Every preset's cabin is authored at its exact size (walls, floor, ceiling, light, jambs, header, doors, handrails, sill, frame, toe guard and car operating panel cassette), each with its own design language: Traction walnut and bronze with a rear mirror; MRL630 oak and satin stainless; MRL1000 graphite laminate, brass trim and an LED cove; Goods2000 steel liner panels, bumper rails and a chequer floor; Bed2500 white HPL, vinyl floor, wide mirror and a fold-down seat; Panoramic faceted glass walls in a steel frame with a spotlight ring and a glazed hoistway; Hydraulic painted steel; Platform half-height powder-coated walls with a control column and a folding access ramp (lowered while the gate is open); Cycle rubber-lined walls with a wheel channel in the floor. The car operating panel sits on the right side wall next to the front on all nine presets (their return panels are narrower than 40 cm); a car with a return panel of 40 cm or more keeps it beside the door.</p>
 <p>The demo building used by the example maps has the floors B2 (0 cm), B1 (320), G (680), M (950), L1 (1250), L2 (1620), L3 (1980) and L4 (2360). Each preset serves a subset of them.</p>
@@ -1266,6 +1267,7 @@
 </tr>
 </tbody>
 </table>
+<p>On the textured masters, <code>TintStrength</code> fades the <code>Tint</code> colour in: at 0 (the default) you see the scan as shot and <code>Tint</code> has no effect, so set <code>TintStrength</code> above 0 (1 = full tint) to see a new colour.</p>
 <p>Finish variants you can swap: woods Walnut, Oak, SmokedOak; stones Terrazzo, Travertine, TravertinePolished, Marble, StoneTile; metals Steel, Satin, Brass, Bronze, PanelSteel, LinerSteel, DarkMetal, Chequer; carpets Carpet, CarpetDark. Set a different instance in the visual set's <em>Material Overrides</em> for the slot you want to change.</p>
 <p>The mesh material slots keep their authored names (<code>M_HQ_Steel</code>, <code>M_HQ_Walnut</code> and so on). A visual set maps each slot to an instance. All master materials have <em>Used with Instanced Static Meshes</em> enabled, so material instances can be used on the instanced parts of tall buildings.</p>
 <h2 id="meshes">Meshes<a class="headerlink" href="#meshes" title="Permanent link">&para;</a></h2>

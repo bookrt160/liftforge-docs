@@ -1008,7 +1008,7 @@
 <h2 id="operator-console-and-panel">Operator console and panel<a class="headerlink" href="#operator-console-and-panel" title="Permanent link">&para;</a></h2>
 <p>The <strong>LFOperatorConsole</strong> actor is a wall of physical buttons for one car: modes, faults, recovery, the inspection views, plus a floor or destination keypad and a status line. Assign its <strong>Elevator</strong>, optionally its <strong>Bank</strong> (destination calls then go through the bank) and the <strong>Origin Floor Id</strong> it stands on. Use <strong>Rebuild Console</strong> after you change it. The demo's UMG panel (key <strong>H</strong>) offers the same commands in the same order.</p>
 <h2 id="camera-enclosure-tag">Camera enclosure tag<a class="headerlink" href="#camera-enclosure-tag" title="Permanent link">&para;</a></h2>
-<p>The example maps hide lobby walls, lintels and ceilings in their inspection cameras by the actor tag <code>LiftForgeInspectionEnclosure</code>. Tag your own walls with it if you build review cameras that should look into the building.</p>
+<p>The demo game mode (<code>LFDemoGameMode</code>) hides every actor with the tag <code>LiftForgeInspectionEnclosure</code> while it takes its optional art review shots, and shows them again afterwards. No actor in the example maps has this tag, so those maps keep their lobby walls visible. Tag your own walls, lintels and ceilings with it if you use those review shots, or use the same tag in review cameras of your own that should look into the building.</p>
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The exploded view moves static parts too. If you build with <em>Static Fixed Parts</em>, the exploded view switches them to Movable.</li>

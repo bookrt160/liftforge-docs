@@ -383,6 +383,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Displays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changing-a-car-while-playing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1015,6 +1026,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#displays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Displays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changing-a-car-while-playing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1142,6 +1164,9 @@
 <li>imported parts are missing or malformed.</li>
 </ul>
 <p>In the editor the problems go to the <strong>Message Log</strong> (Map Check) once per distinct problem, and an invalid actor shows a placeholder box with text instead of disappearing.</p>
+<p>When you add a row to <strong>Floors</strong>, the new row is empty, so the car is invalid until you fill in its <strong>Id</strong>, <strong>Label</strong> and <strong>Elevation</strong>: until then you see a Message Log warning, the placeholder box and the text "Invalid LiftForge configuration". This is expected.</p>
+<h2 id="displays">Displays<a class="headerlink" href="#displays" title="Permanent link">&para;</a></h2>
+<p>The cabin display, the panel display and the landing displays show the floor <strong>Label</strong>. When the car is parked they show the floor it stands at. While it moves they show the floor it is passing (it changes half way between two floors) with the direction (<code>UP</code> / <code>DN</code>, or arrows when the display font has them), then the arrival floor. A car stopped between floors shows the nearest floor. Network clients show the same.</p>
 <h2 id="changing-a-car-while-playing">Changing a car while playing<a class="headerlink" href="#changing-a-car-while-playing" title="Permanent link">&para;</a></h2>
 <p>You can change <code>Preset</code>, <code>Configuration</code> or <code>ImportedParts</code> at runtime. Then call <strong>Rebuild Assembly</strong> (geometry) or <strong>Mark Configuration Dirty</strong> (validation only). A preset swap or a changed floor count is also detected on the next tick. Calls to floors that no longer exist are dropped, and the car finds its landing again by floor id. A rebuild requested while the car moves runs when it arrives. The cabin floor component is kept, so riders stay on it.</p>
 <h2 id="large-buildings">Large buildings<a class="headerlink" href="#large-buildings" title="Permanent link">&para;</a></h2>
